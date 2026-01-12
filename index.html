@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+<html lang="ko" data-theme="light" class="snap-container">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,13 @@
     <meta name="description" content="수출장비 및 기계설비 보온·보냉 단열공사 시공 전문기업, 주식회사 태진아이엔에스입니다.">
     <meta name="keywords" content="태진아이엔에스, 보온, 보냉, 단열공사, 기계설비, 금속가공, 파이프커버">
     <meta property="og:title" content="주식회사 태진아이엔에스">
-    <meta property="og:description" content="최고의 기술력과 노하우로 보온·보냉 단열공사의 새로운 기준을 제시합니다.">
+    <meta property="og:description" content="최고의 기술력과 노하우로기계설비·배관 보온공사의 새로운 기준을 제시합니다.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://www.tjins.co.kr">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,7 +31,7 @@
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/iso2025_2.png" alt="ISO Certified">
                 <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
             </a>
             <nav>
@@ -100,88 +102,126 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" id="hero-section">
-            <div class="hero-content fade-up">
-                <span data-i18n="hero.company_name"
-                    style="display:block; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 700; letter-spacing: -0.5px;">주식회사
-                    태진아이엔에스</span>
-                <h1 data-i18n="hero.title" style="margin-bottom: 30px;">기계설비 보온·보냉 단열공사 시공 전문기업</h1>
-                <p data-i18n="hero.subtitle">최고의 기술력과 노하우로 보온·보냉 단열공사의 새로운 기준을 제시합니다.</p>
-                <a href="#company" class="btn-primary" data-i18n="hero.cta">더 알아보기</a>
+            <div class="hero-content" id="hero-content">
+                <h1 data-i18n="hero.title" id="hero-title" style="margin-bottom: 30px;">기계설비·배관 보온공사 시공 전문기업</h1>
+                <p data-i18n="hero.subtitle" id="hero-subtitle">최고의 기술력과 노하우로 기계·배관 보온 공사의 새로운 기준을 제시합니다.</p>
             </div>
-            <div class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
+
+            <div class="hero-pagination" id="hero-pagination">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="scroll-down-right">
+                <span style="margin-bottom: 10px;">SCROLL DOWN</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
 
-        <!-- Company Overview -->
-        <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <!-- Intro Section (Company) -->
+        <section class="section-padding" id="intro" style="background-color: var(--bg-color); color: white;">
+            <div class="container fade-up text-center">
+                <h2 class="section-title">Defining Excellence</h2>
+                <p class="section-subtitle">Innovation guided by tradition<br>전통과 기술이 조화를 이루는 최고의 솔루션</p>
+
+                <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.8; color: white;">
+                    주식회사 태진아이엔에스는 끊임없는 기술 개발과 혁신으로<br>
+                    고객에게 최고의 가치를 제공하는 기계설비 보온·보냉 단열공사 전문 기업입니다.
+                </p>
+
+                <div class="intro-links"
+                    style="text-align: left; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+                    <a href="company.html#ceo" class="intro-link" style="color: white; text-decoration: none;">
+                        <span
+                            style="font-size: 1.2rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 5px;">CEO
+                            인사말</span>
+                        <i class="fas fa-arrow-right" style="margin-left: 10px; font-size: 0.9rem;"></i>
+                    </a>
+                    <a href="company.html#philosophy" class="intro-link" style="color: white; text-decoration: none;">
+                        <span
+                            style="font-size: 1.2rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 5px;">경영이념</span>
+                        <i class="fas fa-arrow-right" style="margin-left: 10px; font-size: 0.9rem;"></i>
+                    </a>
+                    <a href="company.html#history" class="intro-link" style="color: white; text-decoration: none;">
+                        <span
+                            style="font-size: 1.2rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 5px;">회사연혁</span>
+                        <i class="fas fa-arrow-right" style="margin-left: 10px; font-size: 0.9rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="section-padding" id="product" style="background-color: var(--bg-secondary);">
             <div class="container fade-up">
-                <h2 class="section-title" data-i18n="overview.title">회사개요</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <i class="fas fa-building"
-                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
-                        <h3 data- i18n="overview.corp_name_label">법인명</h3>
-                        <!-- Need to update json for labels if dynamic, but hardcoding structure for now -->
-                        <p data-i18n="overview.corp_name">주식회사 태진아이엔에스</p>
+                <h2 class="section-title">Masterpiece Materials</h2>
+                <p class="section-subtitle">Uncompromising quality & efficiency<br>타협하지 않는 품질의 기준</p>
+                <div class="content-block">
+                    <div class="content-text">
+                        <h3>태진아이엔에스의 우수한 제품</h3>
+                        <p style="margin: 20px 0;">
+                            파이프커버, 엘보커버, 밸브커버 등 다양한 보온 외장재 제품을 자체 생산하며,<br>
+                            엄격한 품질 관리를 통해 고객 만족을 실현합니다.
+                        </p>
+                        <a href="products.html" class="btn-primary">제품 전체보기</a>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-user-tie"
-                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
-                        <h3>CEO</h3>
-                        <p data-i18n="overview.ceo_name">양성훈</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-map-marker-alt"
-                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
-                        <h3>Location</h3>
-                        <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-industry"
-                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
-                        <h3>Business</h3>
-                        <p data-i18n="overview.business">금속가공업 기계설비 보온보냉 단열공사</p>
+                    <div class="content-image">
+                        <img src="img/product/pipe_cover.jpg" alt="Products"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=Products'">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- History -->
-        <section class="section-padding">
+        <!-- Business Section -->
+        <section class="section-padding" id="business">
             <div class="container fade-up">
-                <h2 class="section-title" data-i18n="history.title">회사연혁</h2>
-                <div class="glass" style="max-width: 800px; margin: 0 auto; padding: 40px;">
-                    <ul class="history-list" id="history-target">
-                        <!-- Populated by JS -->
-                    </ul>
+                <h2 class="section-title">Core Competency</h2>
+                <p class="section-subtitle">Specialized Engineering Solutions<br>독보적인 기술력으로 빚어낸 성과</p>
+                <div class="card-grid">
+                    <a href="business.html#machinery" class="card text-center">
+                        <i class="fas fa-cogs fa-3x mb-3" style="color:var(--primary-color)"></i>
+                        <h3>기계사업부</h3>
+                        <p>반도체 장비 및 정밀 기계 보온 커버 제작</p>
+                    </a>
+                    <a href="business.html#plant" class="card text-center">
+                        <i class="fas fa-industry fa-3x mb-3" style="color:var(--primary-color)"></i>
+                        <h3>플랜트사업부</h3>
+                        <p>대형 플랜트 및 배관 단열 시공</p>
+                    </a>
+                    <a href="business.html#general" class="card text-center">
+                        <i class="fas fa-building fa-3x mb-3" style="color:var(--primary-color)"></i>
+                        <h3>일반사업부</h3>
+                        <p>일반 건물 및 기타 단열 시공</p>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Quick Links to Detail Pages -->
-        <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <!-- Project Section -->
+        <section class="section-padding" id="project" style="background-color: var(--bg-secondary);">
             <div class="container fade-up">
-                <h2 class="section-title">주요 사업 및 제품</h2>
-                <div class="card-grid">
-                    <a href="products.html" class="card text-center" style="cursor: pointer; text-decoration: none;">
-                        <i class="fas fa-box-open"
-                            style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                        <h3 data-i18n="nav.product">제품소개</h3>
-                        <p>파이프커버, 밸브커버 등 다양한 보온 외장재 제품을 확인하세요.</p>
-                    </a>
-                    <a href="projects.html" class="card text-center" style="cursor: pointer; text-decoration: none;">
-                        <i class="fas fa-project-diagram"
-                            style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                        <h3 data-i18n="nav.project">사업실적</h3>
-                        <p>반도체, 플랜트, 일반 기계설비 등 다양한 시공 실적을 확인하세요.</p>
-                    </a>
-                    <a href="process.html" class="card text-center" style="cursor: pointer; text-decoration: none;">
-                        <i class="fas fa-cogs"
-                            style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                        <h3 data-i18n="nav.process">공정소개</h3>
-                        <p>철저한 품질 관리를 통한 태진아이엔에스만의 작업 공정을 소개합니다.</p>
-                    </a>
+                <h2 class="section-title">Global Success</h2>
+                <p class="section-subtitle">Proven Excellence Worldwide<br>세계가 인정한 기술력</p>
+                <div class="text-center" style="margin-bottom: 40px;">
+                    <p>태진아이엔에스는 수많은 프로젝트를 성공적으로 수행하며 신뢰를 쌓아가고 있습니다.</p>
+                </div>
+                <div class="content-block reverse">
+                    <div class="content-text">
+                        <h3>주요 실적 현황</h3>
+                        <ul style="margin: 20px 0; list-style: none; padding:0;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                    style="color:var(--primary-color); margin-right:10px;"></i> 반도체 라인 단열 공사</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                    style="color:var(--primary-color); margin-right:10px;"></i> 대형 플랜트 보온 시공</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check"
+                                    style="color:var(--primary-color); margin-right:10px;"></i> 해외 수출 장비 커버 제작</li>
+                        </ul>
+                        <a href="business.html#list" class="btn-primary">실적 더보기</a>
+                    </div>
+                    <div class="content-image">
+                        <img src="img/plant/플랜트사업부_제작사례3.png" alt="Projects"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=Projects'">
+                    </div>
                 </div>
             </div>
         </section>
@@ -189,48 +229,87 @@
         <!-- Contact Section -->
         <section id="contact" class="section-padding">
             <div class="container fade-up">
-                <h2 class="section-title" data-i18n="nav.contact">문의하기</h2>
-                <div class="grid-2-col"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
-                    <div class="contact-info glass" style="padding: 30px;">
-                        <div style="margin-bottom: 20px;">
-                            <h3 style="margin-bottom: 10px; color: var(--primary-color);">Head Office</h3>
-                            <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <h3 style="margin-bottom: 10px; color: var(--primary-color);">Contact</h3>
-                            <p><i class="fas fa-phone"></i> T. <span data-i18n="overview.tel">041) 910-9999, 8000</span>
-                            </p>
-                            <p><i class="fas fa-fax"></i> F. <span data-i18n="overview.fax">041) 910-9998</span></p>
-                            <p><i class="fas fa-envelope"></i> E. <span
-                                    data-i18n="overview.email">tjins@tjins.co.kr</span></p>
-                        </div>
+                <h2 class="section-title">Partner With Us</h2>
+                <p class="section-subtitle">Begin Your Journey<br>성공적인 비즈니스의 시작</p>
+                <div class="grid-2-col">
+                    <div class="contact-info glass" style="padding: 40px;">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color); font-size: 1.5rem;">(주)태진아이엔에스</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px;"><strong>대표자:</strong> 양성훈 <span
+                                    style="margin: 0 10px;">|</span> <strong>사업자등록번호:</strong> 326-86-02995</li>
+                            <li style="margin-bottom: 10px;"><strong>본사:</strong> 충남 아산시 영인면 토정로 423</li>
+                            <li style="margin-bottom: 10px;"><strong>대표전화:</strong> 041-910-8000 / 041-910-9999</li>
+                            <li style="margin-bottom: 10px;"><strong>팩스:</strong> 041-910-9998</li>
+                            <li style="margin-bottom: 10px;"><strong>모바일:</strong> 010-4636-3706</li>
+                            <li style="margin-bottom: 20px;"><strong>이메일:</strong> tjins@tjins.co.kr</li>
+                            <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
+                            <li style="margin-bottom: 10px; font-weight: bold; color: var(--primary-color);">※ 견적문의</li>
+                            <li style="margin-bottom: 5px;"><strong>총괄이사:</strong> 유상보</li>
+                            <li><strong>모바일:</strong> 010-4641-0348</li>
+                        </ul>
                     </div>
-                    <!-- Map Plugin Placeholder - Using Image or Kakao Map is common in Korea, but for now a placeholder or iframe -->
-                    <div class="map-container glass" style="padding: 10px; height: 300px;">
+                    <div class="map-container glass" style="padding: 10px; height: 400px;">
+                        <!-- Using Kakao Map or Google Map Placeholder -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.852113580288!2d126.96901907564978!3d36.893885972220616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b21cb0cce1a21%3A0xbe49f899175f86c3!2z7Lap7LKt64Ko64-EIOyVhOyCsOyLnCDsmIHsnbjrqbQg7Yag7KCV66GcIDQyMw!5e0!3m2!1sko!2skr!4v1768019143328!5m2!1sko!2skr"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <!-- Note: The coordinates above are approximate placeholders. -->
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">TAEJIN INS</div>
-                <div class="footer-info">
-                    <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
-                    <p>TEL: <span data-i18n="overview.tel"></span> | FAX: <span data-i18n="overview.fax"></span></p>
-                    <p>Email: <span data-i18n="overview.email"></span></p>
+            <div class="footer-links-grid">
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">회사소개</h4>
+                    <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <li><a href="company.html#ceo">CEO 인사말</a></li>
+                        <li><a href="company.html#philosophy">경영이념</a></li>
+                        <li><a href="company.html#history">회사연혁</a></li>
+                        <li><a href="company.html#org">조직도</a></li>
+                        <li><a href="company.html#location">오시는길</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">제품소개</h4>
+                    <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <li><a href="products.html#overview">제품개요</a></li>
+                        <li><a href="products.html#lineup">제품라인업</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">사업소개</h4>
+                    <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <li><a href="business.html#machinery">기계사업부</a></li>
+                        <li><a href="business.html#plant">플랜트사업부</a></li>
+                        <li><a href="business.html#general">일반사업부</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">ESG</h4>
+                    <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <li><a href="esg.html#ethics">윤리경영</a></li>
+                        <li><a href="esg.html#safety">안전보건경영</a></li>
+                        <li><a href="esg.html#quality">품질경영</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">고객지원</h4>
+                    <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <li><a href="support.html#notice">공지사항</a></li>
+                        <li><a href="support.html#data">자료실</a></li>
+                        <li><a href="career.html">채용정보</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="copyright" data-i18n="footer.copyright"></div>
+
+            <div class="footer-bottom text-center">
+                <p class="copyright">Copyright &copy; www.tjins.co.kr. All rights reserved. <span
+                        style="margin-left: 10px;">이메일 및 연락처 무단수집거부</span></p>
+            </div>
         </div>
     </footer>
 

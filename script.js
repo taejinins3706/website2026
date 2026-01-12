@@ -244,40 +244,113 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 5. Hero Background Slideshow
+    // 5. Hero Background Slideshow with Pagination and Text
     const heroSection = document.getElementById('hero-section');
-    if (heroSection) {
-        const heroImages = [
-            'Whisk_04936154d3c7abb86d04cbe8aab4b65bdr.jpeg',
-            'Whisk_1841e779acde63eb1784151bc3eb3301dr.jpeg',
-            'Whisk_7d8a9a4d79a2d5796d64287263e40274dr.jpeg',
-            'Whisk_80483ddd394a9cb9c9f4b58dd12184a3dr.jpeg',
-            'Whisk_90dce6473bf2851ab9a40f1737591c80eg.jpeg',
-            'Whisk_b2b13bf3f83f503a9b8441a3ab06d39bdr.jpeg',
-            'Whisk_b6b6289a226e98baa9a428a24986d9efdr.jpeg',
-            'Whisk_f11be3bdf5a83ad914b4f3f5d77b8303dr.jpeg',
-            'Whisk_f699209f6611a6897ca4d48726ebb786dr.jpeg'
+    const heroContent = document.getElementById('hero-content');
+    const heroTitle = document.getElementById('hero-title');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+    const paginationContainer = document.getElementById('hero-pagination');
+
+    if (heroSection && heroContent && paginationContainer) {
+        const slideTexts = [
+            {
+                title: '기계설비·배관 보온공사 시공 전문기업',
+                subtitle: '최고의 기술력과 노하우로 기계·배관 보온 공사의 새로운 기준을 제시합니다.'
+            },
+            {
+                title: '반도체 / 플랜트 단열 시공 전문',
+                subtitle: '정밀한 시공과 철저한 품질 관리로 에너지 효율을 극대화합니다.'
+            },
+            {
+                title: '고객과 함께 성장하는 파트너',
+                subtitle: '신뢰와 정직을 바탕으로 안전하고 완벽한 시공을 약속드립니다.'
+            }
         ];
 
-        // Preload images
-        heroImages.forEach(img => {
+        // Generate 9 slides using hero1-hero9
+        const slides = Array.from({ length: 9 }, (_, i) => ({
+            image: `hero${i + 1}.jpeg`,
+            ...slideTexts[i % 3]
+        }));
+
+        let currentSlide = 0;
+        const slideIntervalTime = 5000;
+        let slideInterval;
+
+        // Preload hero images
+        slides.forEach(slide => {
+            const tempImg = new Image();
+            tempImg.src = `img/main/${slide.image}`;
+        });
+
+        // Create Dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('hero-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetInterval();
+            });
+            paginationContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.hero-dot');
+
+        function updateSlide(index) {
+            heroContent.classList.add('fade-out');
+            setTimeout(() => {
+                heroSection.style.backgroundImage = `url('img/main/${slides[index].image}')`;
+                heroTitle.textContent = slides[index].title;
+                heroSubtitle.textContent = slides[index].subtitle;
+
+                dots.forEach(d => d.classList.remove('active'));
+                dots[index].classList.add('active');
+
+                heroContent.classList.remove('fade-out');
+            }, 500);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide(currentSlide);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, slideIntervalTime);
+        }
+
+        heroSection.style.backgroundImage = `url('img/main/${slides[0].image}')`;
+        slideInterval = setInterval(nextSlide, slideIntervalTime);
+    }
+
+    // 6. Intro Section Background Slideshow
+    const introSection = document.getElementById('intro');
+    if (introSection) {
+        const introImages = Array.from({ length: 6 }, (_, i) => `intro${i + 1}.jpeg`);
+        let currentIntroSlide = 0;
+
+        // Preload intro images
+        introImages.forEach(img => {
             const tempImg = new Image();
             tempImg.src = `img/main/${img}`;
         });
 
-        // Function to set random background
-        function setRandomHeroBackground() {
-            const randomIndex = Math.floor(Math.random() * heroImages.length);
-            const selectedImage = heroImages[randomIndex];
-            // Just the image, no gradient overlay
-            const newBackground = `url('img/main/${selectedImage}')`;
-            heroSection.style.backgroundImage = newBackground;
-        }
+        introSection.style.webkitTransition = 'background-image 1s ease-in-out';
+        introSection.style.transition = 'background-image 1s ease-in-out';
+        introSection.style.backgroundImage = `url('img/main/${introImages[0]}')`;
+        introSection.style.backgroundSize = 'cover';
+        introSection.style.backgroundPosition = 'center';
 
-        // Initial set
-        setRandomHeroBackground();
-
-        // Interval
-        setInterval(setRandomHeroBackground, 5000);
+        setInterval(() => {
+            currentIntroSlide = (currentIntroSlide + 1) % introImages.length;
+            introSection.style.backgroundImage = `url('img/main/${introImages[currentIntroSlide]}')`;
+        }, 5000);
     }
 });

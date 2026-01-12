@@ -1,0 +1,295 @@
+{
+    "nav": {
+        "home": "홈",
+        "company": "회사소개",
+        "product": "제품소개",
+        "project": "사업실적",
+        "process": "공정소개",
+        "contact": "문의하기"
+    },
+    "hero": {
+        "company_name": "주식회사 태진아이엔에스",
+        "title": "기계설비 보온·보냉 단열공사 시공 전문기업",
+        "subtitle": "최고의 기술력과 노하우로 보온·보냉 단열공사의 새로운 기준을 제시합니다.",
+        "cta": "더 알아보기"
+    },
+    "greetings": {
+        "title": "CEO 인사말",
+        "content": "안녕하세요.<br>수출장비 및 기계설비 보온·보냉 단열공사 시공 전문기업 주식회사 태진아이엔에스입니다.<br>주식회사 태진아이엔에스는 근면, 성실, 정직 이 3가지 사훈을 바탕으로 하는 최고 품질을 자부하는 회사입니다.<br>대표이사 이하 전 직원들은 수년간의 국내외 현장 노하우로 최고의 품질, 안전사고 ZERO를 추구하고 있으며 어떤 상황에서든 누구보다 발 빠르게 대처할 수 있는 능력을 보유하고 있습니다.<br>언제나 신뢰하고 맡길 수 있는 고객만족도 높은 최고의 기업이 되기 위해 부단히 노력할 것을 약속드립니다. 감사합니다.",
+        "ceo": "대표이사 양성훈"
+    },
+    "overview": {
+        "title": "회사개요",
+        "corp_name": "주식회사 태진아이엔에스",
+        "corp_name_label": "법인명",
+        "ceo_name": "양성훈",
+        "address": "충청남도 아산시 영인면 토정로 423",
+        "business": "금속가공업 기계설비 보온보냉 단열공사, 보온자재 도소매업",
+        "tel": "041) 910-9999, 8000",
+        "fax": "041) 910-9998",
+        "email": "tjins@tjins.co.kr",
+        "web": "www.tjins.co.kr"
+    },
+    "history": {
+        "title": "회사연혁",
+        "items": [
+            {
+                "date": "2023.07",
+                "content": "주식회사 태진아이엔에스 설립"
+            },
+            {
+                "date": "2025.05",
+                "content": "ISO-9001, ISO-14001 인증"
+            },
+            {
+                "date": "2025.07",
+                "content": "기업부설연구소 설립"
+            },
+            {
+                "date": "2025.08",
+                "content": "ISO-45001 인증"
+            },
+            {
+                "date": "2025.09",
+                "content": "특허출원 (우수유입방지를 위한 옥외배관 설치용 연결부 밀폐형 보온부재 및 그 시공방법)"
+            }
+        ]
+    },
+    "products": {
+        "title": "생산제품",
+        "desc": "일반적인 급 배수 배관 뿐만 아니라 화학, 약품공장에서 취급하는 초고온, 극저온 탱크 및 배관 등을 보온하는 보온재의 외장재",
+        "effect_title": "제품효과",
+        "effects": [
+            "화학탱크나 배관 등의 부식과 결로 발생을 방지합니다.",
+            "화학탱크나 배관 등의 내부 유체에서 나오는 열이 외부로 발산되거나 손실되는 것을 방지합니다.",
+            "이를 보온할 때 해당 보온재의 파손과 우수 등 외부 유입을 방지합니다."
+        ],
+        "items": [
+            {
+                "name": "파이프커버(Pipe Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "직 배관이나 탱크 바디 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/pipe_cover.jpg"
+            },
+            {
+                "name": "숏엘보커버(Short Elbow Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "배관의 방향 전환구간 (ELBOW) 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/short_elbow_cover1.jpg"
+            },
+            {
+                "name": "롱엘보커버(Long Elbow Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "배관의 방향 전환구간 (ELBOW) 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/long_elbow_cover1.jpg"
+            },
+            {
+                "name": "티커버(T Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "배관의 분기구간 (TEE) 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/t_cover1.jpg"
+            },
+            {
+                "name": "플랜지커버(Flange Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "배관이나 밸브 등을 연결하는 FLANGE 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/flange_cover.jpg"
+            },
+            {
+                "name": "밸브커버(Valve Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "유체의 흐름을 조절하는 VALVE 구간 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/valve_cover.jpg"
+            },
+            {
+                "name": "펌프커버(Pump Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "유체를 흡입, 토출하는 PUMP 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/pump_cover.jpg"
+            },
+            {
+                "name": "탱크헤드커버(Tank Head Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 등",
+                "usage": "TANK HEAD부분 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
+                "img": "img/product/tankhead_cover.jpg"
+            }
+        ]
+    },
+    "process": {
+        "title": "수출장비 작업공정",
+        "steps": [
+            "장비 입고",
+            "작업 전 작업 환경에 맞게 비계설치",
+            "탱크 바디 보온 작업",
+            "탱크 경판 (상, 하부) 보온 작업",
+            "탱크 바디 함석 작업",
+            "탱크 경판 (상, 하부) 함석 작업",
+            "장애물 패치 작업",
+            "맨홀 커버 작업",
+            "실링 작업",
+            "장비 포장",
+            "장비 인양",
+            "장비 출고"
+        ]
+    },
+    "projects": {
+        "title": "사업실적",
+        "tabs": {
+            "machinery": "기계사업부",
+            "plant": "플랜트사업부",
+            "general": "일반사업부"
+        },
+        "export_status": {
+            "title": "수출현황 (2차 전지 배터리 전해질 탱크 보온작업)",
+            "items": [
+                "2025.05~06 미국 오하이오 LG 솔루션 4억 1천 9백만원 302,310 달러",
+                "2025.07~08 미국 애리조나 LG 배터리 2억 7천 7백만원 199,857달러 (간접 수출 실적 100,000달러)",
+                "2025.09 미국 TANK 간접수출 5억 7천만원 411,258달러 (간접 수출 실적 205,000달러)",
+                "기타 수출국가 폴란드 (수출 국가 2개국)",
+                "현재 607,310 달러 기록 중"
+            ]
+        },
+        "lists": {
+            "smartfarm": "스마트팜 실적",
+            "fuelcell": "연료전지 실적",
+            "insulation": "보온공사 실적"
+        },
+        "smartfarm_items": [
+            {
+                "name": "연암대학교 스마트팜 보온공사",
+                "date": "23. 10"
+            },
+            {
+                "name": "전주 농업진흥청 농업공학부 보온공사",
+                "date": "23. 11"
+            },
+            {
+                "name": "상주 농업기술센터 배관 보온공사",
+                "date": "23. 12"
+            },
+            {
+                "name": "고흥포두 스마트팜 1차 배관 보온공사",
+                "date": "24. 01"
+            },
+            {
+                "name": "전주 농업진흥청 보온공사",
+                "date": "24. 02"
+            },
+            {
+                "name": "고흥포두 스마트팜 2차 배관 보온공사",
+                "date": "24. 04"
+            },
+            {
+                "name": "상주 한가람온실 배관 보온공사",
+                "date": "24. 05"
+            },
+            {
+                "name": "논산 스마트팜 보온공사",
+                "date": "24. 06"
+            },
+            {
+                "name": "이천 스마트팜 배관 보온공사",
+                "date": "24. 08"
+            },
+            {
+                "name": "전주 농업진흥청 배관 보온공사",
+                "date": "24. 12"
+            },
+            {
+                "name": "울산 스마트팜 배관 보온공사",
+                "date": "24. 12"
+            },
+            {
+                "name": "예천 스마트팜 보온공사",
+                "date": "25. 01"
+            },
+            {
+                "name": "파주 스마트팜 보온공사",
+                "date": "25. 04"
+            },
+            {
+                "name": "익산 스마트팜 보온공사",
+                "date": "25. 07"
+            }
+        ],
+        "fuelcell_items": [
+            {
+                "name": "진천 연료전지 현장 신축공장 배관 보온공사",
+                "date": "24. 09"
+            },
+            {
+                "name": "보은 연료전지 배관 보온공사",
+                "date": "24. 10"
+            },
+            {
+                "name": "화성 양감 연료전지 보온공사",
+                "date": "24. 11"
+            },
+            {
+                "name": "진천 연료전지 현장 증축 설비 보온공사",
+                "date": "25. 02"
+            }
+        ],
+        "insulation_items": [
+            {
+                "name": "미국 쉐브론 필립스 수출장비/ 우양HC GTPP PROJECT 1차~6차",
+                "date": "23. 11 ~ 24. 03"
+            },
+            {
+                "name": "전주현장, 완주현장 수출 및 내수용 제작배관 보온공사",
+                "date": "24. 06"
+            },
+            {
+                "name": "㈜ 동국 아산공장 원료TANK 3기 보온공사",
+                "date": "24. 09"
+            },
+            {
+                "name": "DYNF 에버그린 프로젝트/ 저장TANK 9기 보온공사 (군산공장)",
+                "date": "24. 11"
+            },
+            {
+                "name": "기아자동차 화성공장 신공장 도장동, 차체동 소방배관 벨브 케이싱 공사",
+                "date": "24. 11"
+            },
+            {
+                "name": "당진 합덕 LD 카본 신축 1공장 환경설비 1차~3차 및 배관 보온공사",
+                "date": "25. 02 ~ 25. 06"
+            },
+            {
+                "name": "김제 석경화학 보온공사",
+                "date": "25. 04 ~ 25. 05"
+            },
+            {
+                "name": "미국 오하이오 LGES L-H PJT 배관 보온공사",
+                "date": "25. 04 ~ 25. 06"
+            },
+            {
+                "name": "미국 LG Energy Solution 수출장비 / 김천공장",
+                "date": "25. 07"
+            },
+            {
+                "name": "청주 DIG 열교환기 보온공사",
+                "date": "25. 07"
+            },
+            {
+                "name": "국도화학 안산공장 하절기 보온 보수공사",
+                "date": "25. 07"
+            },
+            {
+                "name": "미국 수출장비 LYB Flex2 Project 장비 보온공사/우양HC/다경기업",
+                "date": "25. 10"
+            },
+            {
+                "name": "Merck SKOR BioP Project 대전 공장",
+                "date": "25. 10"
+            },
+            {
+                "name": "서오창 오일 생산공정 신축현장 탱크보온",
+                "date": "25. 11~"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© 2026 TAEJIN INS Co., Ltd. All Rights Reserved."
+    }
+}

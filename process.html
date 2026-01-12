@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav.process">공정소개 - 주식회사 태진아이엔에스</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/export_work_process/탱크바디보온작업.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .process-img {
+            flex: 1;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .process-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .process-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .process-info {
+            flex: 1;
+        }
+
+        .step-number {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 46px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+
+            .process-step,
+            .process-step:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .process-img {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">홈</a></li>
+                    <li><a href="index.html#company" data-i18n="nav.company">회사소개</a></li>
+                    <li><a href="products.html" data-i18n="nav.product">제품소개</a></li>
+                    <li><a href="projects.html" data-i18n="nav.project">사업실적</a></li>
+                    <li><a href="process.html" class="active" data-i18n="nav.process">공정소개</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav.contact">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ko">KR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="cn">CN</button>
+                <button class="lang-btn" data-lang="jp">JP</button>
+                <button id="theme-toggle" class="lang-btn" aria-label="Toggle dark mode" style="margin-left: 10px;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1 class="fade-up" data-i18n="process.title">수출장비 작업공정</h1>
+    </div>
+
+    <main class="container section-padding">
+
+        <div id="process-detail-container">
+            <!-- Populated by JS -->
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">TAEJIN INS</div>
+                <div class="footer-info">
+                    <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
+                    <p>TEL: <span data-i18n="overview.tel"></span> | FAX: <span data-i18n="overview.fax"></span></p>
+                    <p>Email: <span data-i18n="overview.email"></span></p>
+                </div>
+            </div>
+            <div class="copyright" data-i18n="footer.copyright"></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Specific renderer for process page with images
+        async function renderProcessDetail() {
+            const lang = localStorage.getItem('preferredLang') || 'ko';
+            try {
+                const res = await fetch(`./lang/${lang}.json`);
+                const data = await res.json();
+
+                const container = document.getElementById('process-detail-container');
+                if (!container || !data.process || !data.process.steps) return;
+
+                // Manual mapping of images to steps indices (0-11)
+                const images = [
+                    "img/export_work_process/장비입고.jpg",
+                    "img/export_work_process/작업환경맞춤비계설치.jpg",
+                    "img/export_work_process/탱크바디보온작업.jpg",
+                    "img/export_work_process/탱그경판(상하부)보온작업.jpg", // Note typo in filename "탱그"
+                    "img/export_work_process/탱크바디함석작업.jpg",
+                    "img/export_work_process/탱크경판(상하부)함석작업.jpg",
+                    "img/export_work_process/장애물패치작업.jpg",
+                    "img/export_work_process/맨홀커버작업.jpg",
+                    "img/export_work_process/실링작업.jpg",
+                    "img/export_work_process/장비포장.jpg",
+                    "img/export_work_process/장비인양.jpg",
+                    "img/export_work_process/장비출고.jpg"
+                ];
+
+                container.innerHTML = data.process.steps.map((step, index) => `
+                    <div class="process-step fade-up">
+                        <div class="process-img">
+                            <img src="${images[index]}" alt="${step}" loading="lazy">
+                        </div>
+                        <div class="process-info">
+                            <span class="step-number">${index + 1}</span>
+                            <h3 style="font-size: 1.5rem; color: var(--text-primary);">${step}</h3>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Trigger animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-in');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', renderProcessDetail);
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setTimeout(renderProcessDetail, 100)));
+    </script>
+</body>
+
+</html>

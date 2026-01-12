@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav.product">제품소개 - 주식회사 태진아이엔에스</title>
+    <meta name="description" content="태진아이엔에스의 고품질 보온 외장재 제품을 소개합니다. 파이프커버, 엘보커버, 밸브커버 등.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/product/pipe_cover.jpg');
+            /* Fallback or specific image */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">홈</a></li>
+                    <li><a href="index.html#company" data-i18n="nav.company">회사소개</a></li>
+                    <li><a href="products.html" class="active" data-i18n="nav.product">제품소개</a></li>
+                    <li><a href="projects.html" data-i18n="nav.project">사업실적</a></li>
+                    <li><a href="process.html" data-i18n="nav.process">공정소개</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav.contact">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ko">KR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="cn">CN</button>
+                <button class="lang-btn" data-lang="jp">JP</button>
+                <button id="theme-toggle" class="lang-btn" aria-label="Toggle dark mode" style="margin-left: 10px;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1 class="fade-up" data-i18n="products.title">제품소개</h1>
+    </div>
+
+    <main class="container section-padding">
+
+        <section class="mb-5 fade-up" style="margin-bottom: 50px;">
+            <div class="glass" style="padding: 30px;">
+                <h2 style="color: var(--primary-color); margin-bottom: 15px;" data-i18n="products.title">생산제품</h2>
+                <p style="margin-bottom: 30px; line-height: 1.8;" data-i18n="products.desc">개요 설명...</p>
+
+                <h3 style="margin-bottom: 15px;" data-i18n="products.effect_title">제품효과</h3>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <!-- Effects list should be populated dynamically ideally, but structure is slightly different. 
+                         I will assume the JS doesn't auto-populate this specific list unless I update it. 
+                         Let's keep it simple and just rely on the static structure + specific data keys if possible 
+                         or update JS to handle a generic list. 
+                         For now, I'll rely on the 'data-i18n' for single strings, but for arrays, I'll need a helper.
+                         I'll add a script tag helper here specifically for this page. -->
+                    <div id="product-effects-list"></div>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div id="product-grid" class="card-grid">
+                <!-- Products will be rendered here by script.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">TAEJIN INS</div>
+                <div class="footer-info">
+                    <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
+                    <p>TEL: <span data-i18n="overview.tel"></span> | FAX: <span data-i18n="overview.fax"></span></p>
+                    <p>Email: <span data-i18n="overview.email"></span></p>
+                </div>
+            </div>
+            <div class="copyright" data-i18n="footer.copyright"></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Page specific script to render effects list
+        // We'll hook into the translation loading logic by listening to a custom event or just polling?
+        // Actually, script.js handles language switching. We can add a function to `script.js` to trigger a custom event 
+        // OR just handle this specific list in `script.js` too?
+        // To be clean, I'll add a helper in this page that reads the current lang data from the translation object if I can access it.
+        // But `loadTranslations` is internal to `script.js`.
+
+        // I'll make a small specific fetch here to support the effects list immediately on load, 
+        // relying on the main script for the rest.
+        // OR: I can update script.js to expose data? 
+        // Simpler: I'll add a 'renderProductEffects' function in script.js since I'm already editing it.
+        // I will do that in a follow-up or just use the existing JS structure.
+        // Actually I'll use a small inline script that re-fetches or use a global window object if available.
+        // For simplicity, let's just create the DOM elements with data-i18n-list="products.effects" and allow script.js to handle list?
+        // No, script.js doesn't have list handling for generic lists.
+
+        // I will add a tiny script here.
+        async function updateEffects() {
+            const lang = localStorage.getItem('preferredLang') || 'ko';
+            try {
+                const res = await fetch(`./lang/${lang}.json`);
+                const data = await res.json();
+                const list = document.getElementById('product-effects-list');
+                if (list && data.products && data.products.effects) {
+                    list.innerHTML = data.products.effects.map(e => `<li style="margin-bottom: 10px;">${e}</li>`).join('');
+                }
+            } catch (e) { }
+        }
+        document.addEventListener('DOMContentLoaded', updateEffects);
+        document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setTimeout(updateEffects, 100)));
+    </script>
+</body>
+
+</html>

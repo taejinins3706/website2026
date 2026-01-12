@@ -1,0 +1,295 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "company": "会社紹介",
+        "product": "製品紹介",
+        "project": "事業実績",
+        "process": "工程紹介",
+        "contact": "お問い合わせ"
+    },
+    "hero": {
+        "company_name": "株式会社 テジンINS",
+        "title": "機械設備 保温・保冷 断熱工事 施工専門企業",
+        "subtitle": "最高の技術力とノウハウで、保温・保冷断熱工事の新しい基準を提示します。",
+        "cta": "もっと見る"
+    },
+    "greetings": {
+        "title": "CEOご挨拶",
+        "content": "こんにちは。<br>輸出装備および機械設備、保温・保冷断熱工事施工専門企業、株式会社テジンINSです。<br>株式会社テジンINSは、勤勉、誠実、正直の3つの社訓を基に、最高の品質を自負する会社です。<br>代表取締役以下全社員は、数年間の国内外の現場ノウハウで最高の品質、安全事故ZEROを追求しており、どのような状況でも誰よりも素早く対処できる能力を保有しています。<br>いつも信頼して任せられる顧客満足度の高い最高の企業になるために、絶えず努力することを約束します。ありがとうございます。",
+        "ceo": "代表取締役 ヤン・ソンフン"
+    },
+    "overview": {
+        "title": "会社概要",
+        "corp_name": "株式会社 テジンINS",
+        "corp_name_label": "法人名",
+        "ceo_name": "ヤン・ソンフン",
+        "address": "忠清南道牙山市霊仁面土亭路 423",
+        "business": "金属加工業、機械設備保温保冷断熱工事、保温資材卸売業",
+        "tel": "041) 910-9999, 8000",
+        "fax": "041) 910-9998",
+        "email": "tjins@tjins.co.kr",
+        "web": "www.tjins.co.kr"
+    },
+    "history": {
+        "title": "会社沿革",
+        "items": [
+            {
+                "date": "2023.07",
+                "content": "株式会社テジンINS 設立"
+            },
+            {
+                "date": "2025.05",
+                "content": "ISO-9001, ISO-14001 認証"
+            },
+            {
+                "date": "2025.07",
+                "content": "企業付設研究所 設立"
+            },
+            {
+                "date": "2025.08",
+                "content": "ISO-45001 認証"
+            },
+            {
+                "date": "2025.09",
+                "content": "特許出願 (雨水流入防止のための屋外配管設置用連結部密閉型保温部材およびその施工方法)"
+            }
+        ]
+    },
+    "products": {
+        "title": "生産製品",
+        "desc": "一般的な給排水配管だけでなく、化学、薬品工場で取扱う超高温、極低温タンクおよび配管などを保温する保温材の外装材。",
+        "effect_title": "製品効果",
+        "effects": [
+            "化学タンクや配管などの腐食や結露の発生を防止します。",
+            "化学タンクや配管などの内部流体から出る熱が外部に発散されたり損失することを防止します。",
+            "保温する際、該当保温材の破損や雨水など外部流入を防止します。"
+        ],
+        "items": [
+            {
+                "name": "パイプカバー (Pipe Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "直配管やタンク本体の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/pipe_cover.jpg"
+            },
+            {
+                "name": "ショートエルボカバー (Short Elbow Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "配管の方向転換区間 (ELBOW) の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/short_elbow_cover1.jpg"
+            },
+            {
+                "name": "ロングエルボカバー (Long Elbow Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "配管の方向転換区間 (ELBOW) の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/long_elbow_cover1.jpg"
+            },
+            {
+                "name": "Tカバー (T Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "配管の分岐区間 (TEE) の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/t_cover1.jpg"
+            },
+            {
+                "name": "フランジカバー (Flange Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "配管やバルブなどを連結する FLANGE の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/flange_cover.jpg"
+            },
+            {
+                "name": "バルブカバー (Valve Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "流体の流れを調節する VALVE 区間の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/valve_cover.jpg"
+            },
+            {
+                "name": "ポンプカバー (Pump Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "流体を吸入、吐出する PUMP の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/pump_cover.jpg"
+            },
+            {
+                "name": "タンクヘッドカバー (Tank Head Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL など",
+                "usage": "TANK HEAD 部分の保温時、保温材の破損や雨水などの外部流入を防止する外装材",
+                "img": "img/product/tankhead_cover.jpg"
+            }
+        ]
+    },
+    "process": {
+        "title": "輸出装備作業工程",
+        "steps": [
+            "装備搬入",
+            "作業前に作業環境に合わせて足場設置",
+            "タンク本体保温作業",
+            "タンク鏡板（上、下部）保温作業",
+            "タンク本体板金作業",
+            "タンク鏡板（上、下部）板金作業",
+            "障害物パッチ作業",
+            "マンホールカバー作業",
+            "シーリング作業",
+            "装備梱包",
+            "装備引き上げ",
+            "装備出庫"
+        ]
+    },
+    "projects": {
+        "title": "実績現況",
+        "tabs": {
+            "machinery": "機械事業部",
+            "plant": "プラント事業部",
+            "general": "一般事業部"
+        },
+        "export_status": {
+            "title": "輸出状況 (二次電池バッテリー電解質タンク保温作業)",
+            "items": [
+                "2025.05~06 米国オハイオ LG Solution 4億1千9百万ウォン / 302,310ドル",
+                "2025.07~08 米国アリゾナ LG Battery 2億7千7百万ウォン / 199,857ドル (間接輸出実績 100,000ドル)",
+                "2025.09 米国 TANK 間接輸出 5億7千万ウォン / 411,258ドル (間接輸出実績 205,000ドル)",
+                "その他輸出国家 ポーランド (輸出国家 2ヶ国)",
+                "現在 607,310ドル 記録中"
+            ]
+        },
+        "lists": {
+            "smartfarm": "スマートファーム実績",
+            "fuelcell": "燃料電池実績",
+            "insulation": "保温工事実績"
+        },
+        "smartfarm_items": [
+            {
+                "name": "天安年庵大学 スマートファーム 保温工事",
+                "date": "23. 10"
+            },
+            {
+                "name": "全州 農業振興庁 農業工学部 保温工事",
+                "date": "23. 11"
+            },
+            {
+                "name": "尚州 農業技術センター 配管保温工事",
+                "date": "23. 12"
+            },
+            {
+                "name": "高興浦頭 スマートファーム 1次 配管保温工事",
+                "date": "24. 01"
+            },
+            {
+                "name": "全州 農業振興庁 保温工事",
+                "date": "24. 02"
+            },
+            {
+                "name": "高興浦頭 スマートファーム 2次 配管保温工事",
+                "date": "24. 04"
+            },
+            {
+                "name": "尚州 ハンガラム温室 配管保温工事",
+                "date": "24. 05"
+            },
+            {
+                "name": "論山 スマートファーム 保温工事",
+                "date": "24. 06"
+            },
+            {
+                "name": "利川 スマートファーム 配管保温工事",
+                "date": "24. 08"
+            },
+            {
+                "name": "全州 農業振興庁 配管保温工事",
+                "date": "24. 12"
+            },
+            {
+                "name": "蔚山 スマートファーム 配管保温工事",
+                "date": "24. 12"
+            },
+            {
+                "name": "醴泉 スマートファーム 保温工事",
+                "date": "25. 01"
+            },
+            {
+                "name": "坡州 スマートファーム 保温工事",
+                "date": "25. 04"
+            },
+            {
+                "name": "益山 スマートファーム 保温工事",
+                "date": "25. 07"
+            }
+        ],
+        "fuelcell_items": [
+            {
+                "name": "鎮川 燃料電池 現場 新築工場 配管保温工事",
+                "date": "24. 09"
+            },
+            {
+                "name": "報恩 燃料電池 配管保温工事",
+                "date": "24. 10"
+            },
+            {
+                "name": "華城 楊甘 燃料電池 保温工事",
+                "date": "24. 11"
+            },
+            {
+                "name": "鎮川 燃料電池 現場 増築設備 保温工事",
+                "date": "25. 02"
+            }
+        ],
+        "insulation_items": [
+            {
+                "name": "米国 Chevron Phillips 輸出装備 / Wooyang HC GTPP PROJECT 1次~6次",
+                "date": "23. 11 ~ 24. 03"
+            },
+            {
+                "name": "全州現場、完州現場 輸出および内需用 製作配管 保温工事",
+                "date": "24. 06"
+            },
+            {
+                "name": "（株）東国 牙山工場 原料TANK 3基 保温工事",
+                "date": "24. 09"
+            },
+            {
+                "name": "DYNF Evergreen プロジェクト / 貯蔵TANK 9基 保温工事 (群山工場)",
+                "date": "24. 11"
+            },
+            {
+                "name": "起亜自動車 華城工場 新工場 塗装棟、車体棟 消防配管 バルブケーシング工事",
+                "date": "24. 11"
+            },
+            {
+                "name": "唐津 合徳 LD Carbon 新築 1工場 環境設備 1次~3次 および 配管保温工事",
+                "date": "25. 02 ~ 25. 06"
+            },
+            {
+                "name": "金堤 ソクギョン化学 保温工事",
+                "date": "25. 04 ~ 25. 05"
+            },
+            {
+                "name": "米国 オハイオ LGES L-H PJT 配管保温工事",
+                "date": "25. 04 ~ 25. 06"
+            },
+            {
+                "name": "米国 LG Energy Solution 輸出装備 / 金泉工場",
+                "date": "25. 07"
+            },
+            {
+                "name": "清州 DIG 熱交換器 保温工事",
+                "date": "25. 07"
+            },
+            {
+                "name": "ククド化学 安山工場 夏季 保温 補修工事",
+                "date": "25. 07"
+            },
+            {
+                "name": "米国 輸出装備 LYB Flex2 Project 装備保温工事 / Wooyang HC / ダギョン企業",
+                "date": "25. 10"
+            },
+            {
+                "name": "Merck SKOR BioP Project 大田工場",
+                "date": "25. 10"
+            },
+            {
+                "name": "西梧倉 油類生産工程 新築現場 タンク保温",
+                "date": "25. 11~"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© 2026 TAEJIN INS Co., Ltd. All Rights Reserved."
+    }
+}

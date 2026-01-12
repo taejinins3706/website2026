@@ -1,0 +1,295 @@
+{
+    "nav": {
+        "home": "首页",
+        "company": "公司介绍",
+        "product": "产品介绍",
+        "project": "业绩展示",
+        "process": "工艺介绍",
+        "contact": "联系我们"
+    },
+    "hero": {
+        "company_name": "泰真INS股份有限公司",
+        "title": "机械设备保温保冷隔热施工专业企业",
+        "subtitle": "凭卓越的技术与经验，树立保温保冷隔热施工的新标准。",
+        "cta": "了解更多"
+    },
+    "greetings": {
+        "title": "CEO致辞",
+        "content": "大家好。<br>我们是专门从事出口设备及机械设备保温保冷隔热施工的泰真INS股份有限公司。<br>泰真INS是以勤勉、诚实、正直这三大社训为基础，对最高品质充满自信的公司。<br>代表理事及全体员工凭借多年的国内外现场经验，追求最高品质和零安全事故，并具备在任何情况下都能比任何人都快速应对的能力。<br>为了成为始终值得信赖、客户满意度高的最佳企业，我们承诺将不断努力。谢谢。",
+        "ceo": "代表理事 梁成勋"
+    },
+    "overview": {
+        "title": "公司概况",
+        "corp_name": "泰真INS股份有限公司",
+        "corp_name_label": "公司名称",
+        "ceo_name": "梁成勋",
+        "address": "忠清南道牙山市灵仁面土亭路 423",
+        "business": "金属加工业、机械设备保温保冷隔热工程、保温材料批发零售",
+        "tel": "041) 910-9999, 8000",
+        "fax": "041) 910-9998",
+        "email": "tjins@tjins.co.kr",
+        "web": "www.tjins.co.kr"
+    },
+    "history": {
+        "title": "公司沿革",
+        "items": [
+            {
+                "date": "2023.07",
+                "content": "设立泰真INS股份有限公司"
+            },
+            {
+                "date": "2025.05",
+                "content": "获得 ISO-9001, ISO-14001 认证"
+            },
+            {
+                "date": "2025.07",
+                "content": "设立企业附设研究所"
+            },
+            {
+                "date": "2025.08",
+                "content": "获得 ISO-45001 认证"
+            },
+            {
+                "date": "2025.09",
+                "content": "专利申请 (为防止雨水流入的室外配管安装用连接部密封型保温构件及其施工方法)"
+            }
+        ]
+    },
+    "products": {
+        "title": "生产产品",
+        "desc": "不仅适用于一般供排水管道，还适用于化工、制药厂处理的超高温、超低温储罐及管道等的保温外装材。",
+        "effect_title": "产品效果",
+        "effects": [
+            "防止化学储罐或管道等的腐蚀和结露。",
+            "防止化学储罐或管道内部流体的热量向外部散发或流失。",
+            "保温时防止保温材破损及雨水等外部异物进入。"
+        ],
+        "items": [
+            {
+                "name": "管道保护罩 (Pipe Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "直管或储罐本体保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/pipe_cover.jpg"
+            },
+            {
+                "name": "短弯头保护罩 (Short Elbow Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "管道转向区段 (ELBOW) 保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/short_elbow_cover1.jpg"
+            },
+            {
+                "name": "长弯头保护罩 (Long Elbow Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "管道转向区段 (ELBOW) 保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/long_elbow_cover1.jpg"
+            },
+            {
+                "name": "T型保护罩 (T Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "管道分支区段 (TEE) 保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/t_cover1.jpg"
+            },
+            {
+                "name": "法兰保护罩 (Flange Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "管道或阀门连接处 (FLANGE) 保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/flange_cover.jpg"
+            },
+            {
+                "name": "阀门保护罩 (Valve Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "调节流体流动的阀门 (VALVE) 区段保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/valve_cover.jpg"
+            },
+            {
+                "name": "泵保护罩 (Pump Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "吸入、排出流体的泵 (PUMP) 保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/pump_cover.jpg"
+            },
+            {
+                "name": "储罐封头保护罩 (Tank Head Cover)",
+                "material": "SUS, ALUMINIUM, COLOR STEEL 等",
+                "usage": "TANK HEAD 部分保温时，防止保温材破损及雨水等外部流入的外装材",
+                "img": "img/product/tankhead_cover.jpg"
+            }
+        ]
+    },
+    "process": {
+        "title": "出口设备作业流程",
+        "steps": [
+            "设备入库",
+            "作业前根据环境安装脚手架",
+            "储罐本体保温作业",
+            "储罐封头（上、下部）保温作业",
+            "储罐本体铁皮作业",
+            "储罐封头（上、下部）铁皮作业",
+            "障碍物修补作业",
+            "人孔盖作业",
+            "密封作业",
+            "设备包装",
+            "设备吊装",
+            "设备出库"
+        ]
+    },
+    "projects": {
+        "title": "业绩展示",
+        "tabs": {
+            "machinery": "机械事业部",
+            "plant": "成套设备事业部",
+            "general": "一般事业部"
+        },
+        "export_status": {
+            "title": "出口现状 (二次电池电解质储罐保温作业)",
+            "items": [
+                "2025.05~06 美国俄亥俄州 LG Solution 4亿1千9百万韩元 / 302,310美元",
+                "2025.07~08 美国亚利桑那州 LG Battery 2亿7千7百万韩元 / 199,857美元 (间接出口 100,000美元)",
+                "2025.09 美国 TANK 间接出口 5亿7千万韩元 / 411,258美元 (间接出口 205,000美元)",
+                "其他出口国家：波兰 (出口国家 2个)",
+                "目前记录 607,310 美元"
+            ]
+        },
+        "lists": {
+            "smartfarm": "智慧农场业绩",
+            "fuelcell": "燃料电池业绩",
+            "insulation": "保温工程业绩"
+        },
+        "smartfarm_items": [
+            {
+                "name": "炼岩大学 智慧农场 保温工程",
+                "date": "23. 10"
+            },
+            {
+                "name": "全州 农业振兴厅 农业工程部 保温工程",
+                "date": "23. 11"
+            },
+            {
+                "name": "尚州 农业技术中心 管道保温工程",
+                "date": "23. 12"
+            },
+            {
+                "name": "高兴浦头 智慧农场 1次 管道保温工程",
+                "date": "24. 01"
+            },
+            {
+                "name": "全州 农业振兴厅 保温工程",
+                "date": "24. 02"
+            },
+            {
+                "name": "高兴浦头 智慧农场 2次 管道保温工程",
+                "date": "24. 04"
+            },
+            {
+                "name": "尚州 韩佳蓝温室 管道保温工程",
+                "date": "24. 05"
+            },
+            {
+                "name": "论山 智慧农场 保温工程",
+                "date": "24. 06"
+            },
+            {
+                "name": "利川 智慧农场 管道保温工程",
+                "date": "24. 08"
+            },
+            {
+                "name": "全州 农业振兴厅 管道保温工程",
+                "date": "24. 12"
+            },
+            {
+                "name": "蔚山 智慧农场 管道保温工程",
+                "date": "24. 12"
+            },
+            {
+                "name": "醴泉 智慧农场 保温工程",
+                "date": "25. 01"
+            },
+            {
+                "name": "坡州 智慧农场 保温工程",
+                "date": "25. 04"
+            },
+            {
+                "name": "益山 智慧农场 保温工程",
+                "date": "25. 07"
+            }
+        ],
+        "fuelcell_items": [
+            {
+                "name": "镇川 燃料电池 现场 新建工厂 管道保温工程",
+                "date": "24. 09"
+            },
+            {
+                "name": "报恩 燃料电池 管道保温工程",
+                "date": "24. 10"
+            },
+            {
+                "name": "华城 杨广 燃料电池 保温工程",
+                "date": "24. 11"
+            },
+            {
+                "name": "镇川 燃料电池 现场 扩建设备 保温工程",
+                "date": "25. 02"
+            }
+        ],
+        "insulation_items": [
+            {
+                "name": "美国 Chevron Phillips 出口设备 / Wooyang HC GTPP 项目 1~6次",
+                "date": "23. 11 ~ 24. 03"
+            },
+            {
+                "name": "全州现场、完州现场 出口及内需用 制作管道 保温工程",
+                "date": "24. 06"
+            },
+            {
+                "name": "东国 牙山工厂 原料TANK 3期 保温工程",
+                "date": "24. 09"
+            },
+            {
+                "name": "DYNF Evergreen 项目 / 储存TANK 9期 保温工程 (群山工厂)",
+                "date": "24. 11"
+            },
+            {
+                "name": "起亚汽车 华城工厂 新工厂 涂装栋、车身栋 消防管道 阀门 casing 工程",
+                "date": "24. 11"
+            },
+            {
+                "name": "唐津 合德 LD Carbon 新建 1工厂 环境设备 1~3次 及 管道保温工程",
+                "date": "25. 02 ~ 25. 06"
+            },
+            {
+                "name": "金堤 石京化学 保温工程",
+                "date": "25. 04 ~ 25. 05"
+            },
+            {
+                "name": "美国 俄亥俄州 LGES L-H PJT 管道保温工程",
+                "date": "25. 04 ~ 25. 06"
+            },
+            {
+                "name": "美国 LG Energy Solution 出口设备 / 金泉工厂",
+                "date": "25. 07"
+            },
+            {
+                "name": "清州 DIG 热交换器 保温工程",
+                "date": "25. 07"
+            },
+            {
+                "name": "国都化学 安山工厂 夏季 保温 维修工程",
+                "date": "25. 07"
+            },
+            {
+                "name": "美国 出口设备 LYB Flex2 项目 设备保温工程 / Wooyang HC / Dakyung",
+                "date": "25. 10"
+            },
+            {
+                "name": "Merck SKOR BioP Project 大田工厂",
+                "date": "25. 10"
+            },
+            {
+                "name": "西梧仓 油类生产工程 新建现场 储罐保温",
+                "date": "25. 11~"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© 2026 TAEJIN INS Co., Ltd. All Rights Reserved."
+    }
+}

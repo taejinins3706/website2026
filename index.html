@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="hero.title">주식회사 태진아이엔에스</title>
+    <meta name="description" content="수출장비 및 기계설비 보온·보냉 단열공사 시공 전문기업, 주식회사 태진아이엔에스입니다.">
+    <meta name="keywords" content="태진아이엔에스, 보온, 보냉, 단열공사, 기계설비, 금속가공, 파이프커버">
+    <meta property="og:title" content="주식회사 태진아이엔에스">
+    <meta property="og:description" content="최고의 기술력과 노하우로 보온·보냉 단열공사의 새로운 기준을 제시합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.tjins.co.kr">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">홈</a></li>
+                    <li><a href="#company" data-i18n="nav.company">회사소개</a></li>
+                    <li><a href="products.html" data-i18n="nav.product">제품소개</a></li>
+                    <li><a href="projects.html" data-i18n="nav.project">사업실적</a></li>
+                    <li><a href="process.html" data-i18n="nav.process">공정소개</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ko">KR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="cn">CN</button>
+                <button class="lang-btn" data-lang="jp">JP</button>
+                <button id="theme-toggle" class="lang-btn" aria-label="Toggle dark mode" style="margin-left: 10px;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content fade-up">
+                <span data-i18n="hero.company_name"
+                    style="display:block; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 20px; font-weight: 700; letter-spacing: -0.5px;">주식회사
+                    태진아이엔에스</span>
+                <h1 data-i18n="hero.title" style="margin-bottom: 30px;">기계설비 보온·보냉 단열공사 시공 전문기업</h1>
+                <p data-i18n="hero.subtitle">최고의 기술력과 노하우로 보온·보냉 단열공사의 새로운 기준을 제시합니다.</p>
+                <a href="#company" class="btn-primary" data-i18n="hero.cta">더 알아보기</a>
+            </div>
+            <div class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- CEO Greetings -->
+        <section id="company" class="section-padding">
+            <div class="container fade-up">
+                <h2 class="section-title" data-i18n="greetings.title">CEO 인사말</h2>
+                <div class="glass" style="padding: 40px; text-align: center; max-width: 800px; margin: 0 auto;">
+                    <i class="fas fa-quote-left"
+                        style="font-size: 2rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <p data-i18n="greetings.content" style="font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8;">
+                    </p>
+                    <p data-i18n="greetings.ceo" style="font-weight: 700; font-size: 1.2rem;"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container fade-up">
+                <h2 class="section-title" data-i18n="overview.title">회사개요</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <i class="fas fa-building"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3 data- i18n="overview.corp_name_label">법인명</h3>
+                        <!-- Need to update json for labels if dynamic, but hardcoding structure for now -->
+                        <p data-i18n="overview.corp_name">주식회사 태진아이엔에스</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-user-tie"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3>CEO</h3>
+                        <p data-i18n="overview.ceo_name">양성훈</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-map-marker-alt"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3>Location</h3>
+                        <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-industry"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                        <h3>Business</h3>
+                        <p data-i18n="overview.business">금속가공업 기계설비 보온보냉 단열공사</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="section-padding">
+            <div class="container fade-up">
+                <h2 class="section-title" data-i18n="history.title">회사연혁</h2>
+                <div class="glass" style="max-width: 800px; margin: 0 auto; padding: 40px;">
+                    <ul class="history-list" id="history-target">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links to Detail Pages -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container fade-up">
+                <h2 class="section-title">주요 사업 및 제품</h2>
+                <div class="card-grid">
+                    <a href="products.html" class="card text-center" style="cursor: pointer; text-decoration: none;">
+                        <i class="fas fa-box-open"
+                            style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3 data-i18n="nav.product">제품소개</h3>
+                        <p>파이프커버, 밸브커버 등 다양한 보온 외장재 제품을 확인하세요.</p>
+                    </a>
+                    <a href="projects.html" class="card text-center" style="cursor: pointer; text-decoration: none;">
+                        <i class="fas fa-project-diagram"
+                            style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3 data-i18n="nav.project">사업실적</h3>
+                        <p>반도체, 플랜트, 일반 기계설비 등 다양한 시공 실적을 확인하세요.</p>
+                    </a>
+                    <a href="process.html" class="card text-center" style="cursor: pointer; text-decoration: none;">
+                        <i class="fas fa-cogs"
+                            style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3 data-i18n="nav.process">공정소개</h3>
+                        <p>철저한 품질 관리를 통한 태진아이엔에스만의 작업 공정을 소개합니다.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container fade-up">
+                <h2 class="section-title" data-i18n="nav.contact">문의하기</h2>
+                <div class="grid-2-col"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
+                    <div class="contact-info glass" style="padding: 30px;">
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 10px; color: var(--primary-color);">Head Office</h3>
+                            <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 10px; color: var(--primary-color);">Contact</h3>
+                            <p><i class="fas fa-phone"></i> T. <span data-i18n="overview.tel">041) 910-9999, 8000</span>
+                            </p>
+                            <p><i class="fas fa-fax"></i> F. <span data-i18n="overview.fax">041) 910-9998</span></p>
+                            <p><i class="fas fa-envelope"></i> E. <span
+                                    data-i18n="overview.email">tjins@tjins.co.kr</span></p>
+                        </div>
+                    </div>
+                    <!-- Map Plugin Placeholder - Using Image or Kakao Map is common in Korea, but for now a placeholder or iframe -->
+                    <div class="map-container glass" style="padding: 10px; height: 300px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.852113580288!2d126.96901907564978!3d36.893885972220616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b21cb0cce1a21%3A0xbe49f899175f86c3!2z7Lap7LKt64Ko64-EIOyVhOyCsOyLnCDsmIHsnbjrqbQg7Yag7KCV66GcIDQyMw!5e0!3m2!1sko!2skr!4v1768019143328!5m2!1sko!2skr"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- Note: The coordinates above are approximate placeholders. -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">TAEJIN INS</div>
+                <div class="footer-info">
+                    <p data-i18n="overview.address">충청남도 아산시 영인면 토정로 423</p>
+                    <p>TEL: <span data-i18n="overview.tel"></span> | FAX: <span data-i18n="overview.fax"></span></p>
+                    <p>Email: <span data-i18n="overview.email"></span></p>
+                </div>
+            </div>
+            <div class="copyright" data-i18n="footer.copyright"></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Additional simple script to render history from JSON when translations are loaded
+        // However, script.js handles the text replacement.
+        // But for the history list, the structure involves repeating items. 
+        // I will add a special handler in script.js or here to populate the history list.
+
+        async function renderHistory() {
+            // Need to fetch the current language json again or expose it from script.js
+            // For simplicity, I'll fetch it here independently or rely on a helper.
+            // Let's make script.js more robust to handle lists? 
+            // Or just hardcode the list generation logic here based on the currently selected lang logic.
+
+            const lang = localStorage.getItem('preferredLang') || 'ko';
+            try {
+                const response = await fetch(`./lang/${lang}.json`);
+                const data = await response.json();
+                const historyList = document.getElementById('history-target');
+                if (historyList && data.history && data.history.items) {
+                    historyList.innerHTML = data.history.items.map(item => `
+                        <li style="margin-bottom: 20px; display: flex; gap: 20px;">
+                            <span style="color: var(--primary-color); font-weight: bold; min-width: 80px;">${item.date}</span>
+                            <span>${item.content}</span>
+                        </li>
+                    `).join('');
+                }
+            } catch (e) { console.error(e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', renderHistory);
+        // Re-render on language switch
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setTimeout(renderHistory, 100)); // Small delay to allow localStorage update
+        });
+    </script>
+</body>
+
+</html>

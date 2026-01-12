@@ -1,0 +1,295 @@
+{
+    "nav": {
+        "home": "Home",
+        "company": "Company",
+        "product": "Products",
+        "project": "Projects",
+        "process": "Process",
+        "contact": "Contact"
+    },
+    "hero": {
+        "company_name": "TAEJIN INS Co., Ltd.",
+        "title": "Specialists in Mechanical Equipment Insulation Construction",
+        "subtitle": "Setting new standards in insulation construction with superior technology and know-how.",
+        "cta": "Learn More"
+    },
+    "greetings": {
+        "title": "CEO Message",
+        "content": "Hello.<br>We are TAEJIN INS Co., Ltd., a company specializing in insulation construction for export equipment and mechanical facilities.<br>TAEJIN INS prides itself on top quality based on our three company mottos: Diligence, Sincerity, and Honesty.<br>The CEO and all employees pursue top quality and ZERO safety accidents with years of domestic and international field know-how, and possess the ability to respond faster than anyone in any situation.<br>We promise to constantly strive to become a top company with high customer satisfaction that you can always trust. Thank you.",
+        "ceo": "CEO Yang Sung-hoon"
+    },
+    "overview": {
+        "title": "Company Overview",
+        "corp_name": "TAEJIN INS Co., Ltd.",
+        "corp_name_label": "Corporation Name",
+        "ceo_name": "Yang Sung-hoon",
+        "address": "423 Tojeong-ro, Yeongin-myeon, Asan-si, Chungcheongnam-do, Korea",
+        "business": "Metal processing, Mechanical equipment insulation, Insulation material wholesale/retail",
+        "tel": "+82-41-910-9999, 8000",
+        "fax": "+82-41-910-9998",
+        "email": "tjins@tjins.co.kr",
+        "web": "www.tjins.co.kr"
+    },
+    "history": {
+        "title": "Company History",
+        "items": [
+            {
+                "date": "2023.07",
+                "content": "Established TAEJIN INS Co., Ltd."
+            },
+            {
+                "date": "2025.05",
+                "content": "Certified ISO-9001, ISO-14001"
+            },
+            {
+                "date": "2025.07",
+                "content": "Established Corporate R&D Center"
+            },
+            {
+                "date": "2025.08",
+                "content": "Certified ISO-45001"
+            },
+            {
+                "date": "2025.09",
+                "content": "Patent pending (Sealed insulation member for outdoor pipe connections)"
+            }
+        ]
+    },
+    "products": {
+        "title": "Products",
+        "desc": "Exterior materials for insulation of ultra-high and ultra-low temperature tanks and pipes handled in chemical and pharmaceutical plants as well as general water supply and drainage pipes.",
+        "effect_title": "Product Effects",
+        "effects": [
+            "Prevents corrosion and condensation on chemical tanks and pipes.",
+            "Prevents heat from internal fluids from radiating or being lost to the outside.",
+            "Prevents damage to the insulation material and inflow of foreign matter like rain."
+        ],
+        "items": [
+            {
+                "name": "Pipe Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material preventing insulation damage and rain inflow when insulating straight pipes or tank bodies.",
+                "img": "img/product/pipe_cover.jpg"
+            },
+            {
+                "name": "Short Elbow Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for pipe direction change sections (ELBOW).",
+                "img": "img/product/short_elbow_cover1.jpg"
+            },
+            {
+                "name": "Long Elbow Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for pipe direction change sections (ELBOW).",
+                "img": "img/product/long_elbow_cover1.jpg"
+            },
+            {
+                "name": "T Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for pipe branch sections (TEE).",
+                "img": "img/product/t_cover1.jpg"
+            },
+            {
+                "name": "Flange Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for FLANGE sections connecting pipes or valves.",
+                "img": "img/product/flange_cover.jpg"
+            },
+            {
+                "name": "Valve Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for VALVE sections controlling fluid flow.",
+                "img": "img/product/valve_cover.jpg"
+            },
+            {
+                "name": "Pump Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for PUMP sections sucking/discharging fluids.",
+                "img": "img/product/pump_cover.jpg"
+            },
+            {
+                "name": "Tank Head Cover",
+                "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
+                "usage": "Exterior material for TANK HEAD sections.",
+                "img": "img/product/tankhead_cover.jpg"
+            }
+        ]
+    },
+    "process": {
+        "title": "Export Equipment Work Process",
+        "steps": [
+            "Equipment Receiving",
+            "Scaffolding Installation",
+            "Tank Body Insulation Work",
+            "Tank Head (Top/Bottom) Insulation Work",
+            "Tank Body Sheeting Work",
+            "Tank Head (Top/Bottom) Sheeting Work",
+            "Obstacle Patch Work",
+            "Manhole Cover Work",
+            "Sealing Work",
+            "Equipment Packing",
+            "Equipment Lifting",
+            "Equipment Shipping"
+        ]
+    },
+    "projects": {
+        "title": "Project History",
+        "tabs": {
+            "machinery": "Machinery Division",
+            "plant": "Plant Division",
+            "general": "General Division"
+        },
+        "export_status": {
+            "title": "Export Status (Secondary Battery Electrolyte Tank Insulation)",
+            "items": [
+                "2025.05~06 USA Ohio LG Solution KRW 419M / $302,310",
+                "2025.07~08 USA Arizona LG Battery KRW 277M / $199,857 (Indirect Export $100,000)",
+                "2025.09 USA TANK Indirect Export KRW 570M / $411,258 (Indirect Export $205,000)",
+                "Other Export Countries: Poland",
+                "Currently recording $607,310"
+            ]
+        },
+        "lists": {
+            "smartfarm": "Smart Farm Projects",
+            "fuelcell": "Fuel Cell Projects",
+            "insulation": "Insulation Projects"
+        },
+        "smartfarm_items": [
+            {
+                "name": "Yonam College Smart Farm Insulation",
+                "date": "23. 10"
+            },
+            {
+                "name": "Jeonju RDA Dept. of Agricultural Engineering",
+                "date": "23. 11"
+            },
+            {
+                "name": "Sangju Agricultural Technology Center Pipe Insulation",
+                "date": "23. 12"
+            },
+            {
+                "name": "Goheung Podu Smart Farm 1st Pipe Insulation",
+                "date": "24. 01"
+            },
+            {
+                "name": "Jeonju RDA Insulation",
+                "date": "24. 02"
+            },
+            {
+                "name": "Goheung Podu Smart Farm 2nd Pipe Insulation",
+                "date": "24. 04"
+            },
+            {
+                "name": "Sangju Hangaram Greenhouse Pipe Insulation",
+                "date": "24. 05"
+            },
+            {
+                "name": "Nonsan Smart Farm Insulation",
+                "date": "24. 06"
+            },
+            {
+                "name": "Icheon Smart Farm Pipe Insulation",
+                "date": "24. 08"
+            },
+            {
+                "name": "Jeonju RDA Pipe Insulation",
+                "date": "24. 12"
+            },
+            {
+                "name": "Ulsan Smart Farm Pipe Insulation",
+                "date": "24. 12"
+            },
+            {
+                "name": "Yecheon Smart Farm Insulation",
+                "date": "25. 01"
+            },
+            {
+                "name": "Paju Smart Farm Insulation",
+                "date": "25. 04"
+            },
+            {
+                "name": "Iksan Smart Farm Insulation",
+                "date": "25. 07"
+            }
+        ],
+        "fuelcell_items": [
+            {
+                "name": "Jincheon Fuel Cell New Factory Pipe Insulation",
+                "date": "24. 09"
+            },
+            {
+                "name": "Boeun Fuel Cell Pipe Insulation",
+                "date": "24. 10"
+            },
+            {
+                "name": "Hwaseong Yanggam Fuel Cell Insulation",
+                "date": "24. 11"
+            },
+            {
+                "name": "Jincheon Fuel Cell Extension Facility Insulation",
+                "date": "25. 02"
+            }
+        ],
+        "insulation_items": [
+            {
+                "name": "USA Chevron Phillips Export Equipment / Wooyang HC GTPP PJT",
+                "date": "23. 11 ~ 24. 03"
+            },
+            {
+                "name": "Jeonju/Wanju Site Export & Domestic Pipe Insulation",
+                "date": "24. 06"
+            },
+            {
+                "name": "Dongkuk Asan Factory Material TANK 3 Insulation",
+                "date": "24. 09"
+            },
+            {
+                "name": "DYNF Evergreen Project / Storage TANK 9 Insulation (Gunsan)",
+                "date": "24. 11"
+            },
+            {
+                "name": "Kia Motors Hwaseong New Factory Paint/Body Shop Fire Pipe Valve Casing",
+                "date": "24. 11"
+            },
+            {
+                "name": "Dangjin Hapdeok LD Carbon New Factory Environmental Facility 1-3 & Pipe Insulation",
+                "date": "25. 02 ~ 25. 06"
+            },
+            {
+                "name": "Gimje Seokkyung Chemical Insulation",
+                "date": "25. 04 ~ 25. 05"
+            },
+            {
+                "name": "USA Ohio LGES L-H PJT Pipe Insulation",
+                "date": "25. 04 ~ 25. 06"
+            },
+            {
+                "name": "USA LG Energy Solution Export Equipment / Gimcheon Factory",
+                "date": "25. 07"
+            },
+            {
+                "name": "Cheongju DIG Heat Exchanger Insulation",
+                "date": "25. 07"
+            },
+            {
+                "name": "Kukdo Chemical Ansan Factory Summer Maintenance Info",
+                "date": "25. 07"
+            },
+            {
+                "name": "USA Export Equipment LYB Flex2 Project Equipment Insulation",
+                "date": "25. 10"
+            },
+            {
+                "name": "Merck SKOR BioP Project Daejeon Factory",
+                "date": "25. 10"
+            },
+            {
+                "name": "Seo-Ochang Oil Production Process New Site Tank Insulation",
+                "date": "25. 11~"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© 2026 TAEJIN INS Co., Ltd. All Rights Reserved."
+    }
+}

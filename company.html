@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav.company">회사소개 - 주식회사 태진아이엔에스</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline specific */
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--border-color);
+            margin-left: 20px;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid var(--bg-color);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">홈</a></li>
+                    <li class="nav-item">
+                        <a href="company.html" class="active">회사소개</a>
+                        <ul class="dropdown">
+                            <li><a href="company.html#ceo" onclick="openTab('ceo')">CEO 인사말</a></li>
+                            <li><a href="company.html#philosophy" onclick="openTab('philosophy')">경영이념</a></li>
+                            <li><a href="company.html#history" onclick="openTab('history')">회사연혁</a></li>
+                            <li><a href="company.html#org" onclick="openTab('org')">조직도</a></li>
+                            <li><a href="company.html#location" onclick="openTab('location')">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html">제품소개</a>
+                        <ul class="dropdown">
+                            <li><a href="products.html#overview">제품개요</a></li>
+                            <li><a href="products.html#lineup">제품라인업</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="business.html">사업소개</a>
+                        <ul class="dropdown">
+                            <li><a href="business.html#machinery">기계사업부</a></li>
+                            <li><a href="business.html#plant">플랜트사업부</a></li>
+                            <li><a href="business.html#general">일반사업부</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="esg.html">ESG</a>
+                        <ul class="dropdown">
+                            <li><a href="esg.html#ethics">윤리경영</a></li>
+                            <li><a href="esg.html#safety">안전보건경영</a></li>
+                            <li><a href="esg.html#quality">품질경영</a></li>
+                            <li><a href="esg.html#env">환경경영</a></li>
+                            <li><a href="esg.html#cert">인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="career.html">채용</a>
+                        <ul class="dropdown">
+                            <li><a href="career.html#notice">채용공고</a></li>
+                            <li><a href="career.html#talent">인재상</a></li>
+                            <li><a href="career.html#benefit">복리후생</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="support.html">고객지원</a>
+                        <ul class="dropdown">
+                            <li><a href="support.html#notice">공지사항</a></li>
+                            <li><a href="support.html#data">자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ko">KR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button id="theme-toggle" class="lang-btn"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="detail-hero"
+        style="background-image: url('img/company_bg.jpg'), linear-gradient(#333, #333); background-blend-mode: overlay;">
+        <div class="detail-hero-content">
+            <div>
+                <h1 class="detail-title">회사소개</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">신뢰와 기술로 미래를 선도하는 기업, 태진아이엔에스입니다.</p>
+            </div>
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span>Company</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sub Navigation -->
+    <div class="sub-nav-container">
+        <div class="sub-nav">
+            <button class="sub-nav-link active" onclick="openTab('ceo')">CEO 인사말</button>
+            <button class="sub-nav-link" onclick="openTab('philosophy')">경영이념</button>
+            <button class="sub-nav-link" onclick="openTab('history')">회사연혁</button>
+            <button class="sub-nav-link" onclick="openTab('org')">조직도</button>
+            <button class="sub-nav-link" onclick="openTab('location')">오시는길</button>
+        </div>
+    </div>
+
+    <main class="detail-content container">
+
+        <!-- CEO Message -->
+        <section id="ceo" class="tab-content active">
+            <div class="content-block">
+                <div class="content-text">
+                    <div class="content-label">CEO MESSAGE</div>
+                    <h2 class="content-title">고객과 함께 성장하는<br>파트너가 되겠습니다.</h2>
+                    <div class="content-desc">
+                        <p>안녕하십니까? 주식회사 태진아이엔에스 대표이사입니다.</p>
+                        <p>저희 회사는 창립 이래 끊임없는 기술 개발과 품질 혁신을 통해 단열 및 보온 분야의 선두주자로 자리매김해 왔습니다.</p>
+                        <p>앞으로도 '고객 만족'을 최우선 가치로 삼아, 더 나은 제품과 서비스를 제공하기 위해 최선을 다하겠습니다.</p>
+                        <br>
+                        <p>감사합니다.</p>
+                        <p style="margin-top: 20px; font-weight: bold; font-size: 1.1rem;">대표이사 김 태 진</p>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <!-- Placeholder or specific CEO image -->
+                    <img src="img/ceo_placeholder.jpg"
+                        onerror="this.src='https://via.placeholder.com/600x800?text=CEO+Photo'" alt="CEO">
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy -->
+        <section id="philosophy" class="tab-content">
+            <div class="text-center mb-5">
+                <h2 class="section-title">경영이념</h2>
+                <p>Management Philosophy</p>
+            </div>
+            <div class="card-grid">
+                <div class="card text-center">
+                    <i class="fas fa-handshake fa-3x" style="color:var(--primary-color); margin-bottom:20px;"></i>
+                    <h3>신뢰 경영</h3>
+                    <p>고객과의 약속을 생명처럼 여기며 기본과 원칙을 준수합니다.</p>
+                </div>
+                <div class="card text-center">
+                    <i class="fas fa-lightbulb fa-3x" style="color:var(--primary-color); margin-bottom:20px;"></i>
+                    <h3>창조 경영</h3>
+                    <p>끊임없는 도전과 혁신으로 새로운 가치를 창출합니다.</p>
+                </div>
+                <div class="card text-center">
+                    <i class="fas fa-users fa-3x" style="color:var(--primary-color); margin-bottom:20px;"></i>
+                    <h3>인재 경영</h3>
+                    <p>사람을 존중하고 인재를 육성하여 함께 성장합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section id="history" class="tab-content">
+            <div class="content-block">
+                <div class="content-text" style="grid-column: span 2;">
+                    <h2 class="content-title text-center">회사연혁</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023. 05</div>
+                            <p>ISO 9001, ISO 14001 인증 획득</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020. 01</div>
+                            <p>주식회사 태진아이엔에스 법인 전환</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2015. 03</div>
+                            <p>태진설비 설립</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organization -->
+        <section id="org" class="tab-content">
+            <div class="text-center">
+                <h2 class="section-title">조직도</h2>
+                <img src="img/org_chart.jpg"
+                    onerror="this.src='https://via.placeholder.com/1000x600?text=Organization+Chart'"
+                    style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"
+                    alt="Organization Chart">
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section id="location" class="tab-content">
+            <div class="content-block">
+                <div class="content-text">
+                    <h2 class="section-title">오시는길</h2>
+                    <p class="mb-5"><i class="fas fa-map-marker-alt" style="color:var(--primary-color);"></i> 본사: 충청남도
+                        아산시 영인면 토정로 423</p>
+                </div>
+                <!-- Google Maps Embed Placeholder -->
+                <div class="content-image"
+                    style="height: 400px; background: #eee; display: flex; align-items: center; justify-content: center;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.8!2d126.9!3d36.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzYsNSc0MS41Ik4gMTI2wrA1OCc1Mi42IkU!5e0!3m2!1sen!2skr!4v1600000000000!5m2!1sen!2skr"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 TAEJIN INS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelector('.sub-nav-link.active')?.classList.remove('active');
+
+            const target = document.getElementById(tabName);
+            if (target) target.classList.add('active');
+
+            // Highlight sub-nav
+            const btn = document.querySelector(`.sub-nav-link[onclick="openTab('${tabName}')"]`);
+            if (btn) btn.classList.add('active');
+
+            // Scroll to content if needed (optional)
+        }
+
+        // Check hash on load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) openTab(hash);
+        });
+    </script>
+</body>
+
+</html>

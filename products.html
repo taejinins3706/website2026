@@ -22,26 +22,68 @@
                 <img src="img/iso2025_2.jpg" alt="ISO Certified">
                 <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
             </a>
+
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html" data-i18n="nav.home">홈</a></li>
-                    <li><a href="index.html#company" data-i18n="nav.company">회사소개</a></li>
-                    <li><a href="products.html" class="active" data-i18n="nav.product">제품소개</a></li>
-                    <li><a href="projects.html" data-i18n="nav.project">사업실적</a></li>
-                    <li><a href="process.html" data-i18n="nav.process">공정소개</a></li>
-                    <li><a href="index.html#contact" data-i18n="nav.contact">문의하기</a></li>
+                    <li><a href="index.html">홈</a></li>
+                    <li class="nav-item">
+                        <a href="company.html">회사소개</a>
+                        <ul class="dropdown">
+                            <li><a href="company.html#ceo">CEO 인사말</a></li>
+                            <li><a href="company.html#philosophy">경영이념</a></li>
+                            <li><a href="company.html#history">회사연혁</a></li>
+                            <li><a href="company.html#org">조직도</a></li>
+                            <li><a href="company.html#location">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="active">제품소개</a>
+                        <ul class="dropdown">
+                            <li><a href="products.html#overview">제품개요</a></li>
+                            <li><a href="products.html#lineup">제품라인업</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="business.html">사업소개</a>
+                        <ul class="dropdown">
+                            <li><a href="business.html#machinery">기계사업부</a></li>
+                            <li><a href="business.html#plant">플랜트사업부</a></li>
+                            <li><a href="business.html#general">일반사업부</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="esg.html">ESG</a>
+                        <ul class="dropdown">
+                            <li><a href="esg.html#ethics">윤리경영</a></li>
+                            <li><a href="esg.html#safety">안전보건경영</a></li>
+                            <li><a href="esg.html#quality">품질경영</a></li>
+                            <li><a href="esg.html#env">환경경영</a></li>
+                            <li><a href="esg.html#cert">인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="career.html">채용</a>
+                        <ul class="dropdown">
+                            <li><a href="career.html#notice">채용공고</a></li>
+                            <li><a href="career.html#talent">인재상</a></li>
+                            <li><a href="career.html#benefit">복리후생</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="support.html">고객지원</a>
+                        <ul class="dropdown">
+                            <li><a href="support.html#notice">공지사항</a></li>
+                            <li><a href="support.html#data">자료실</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="lang-switch">
                 <button class="lang-btn active" data-lang="ko">KR</button>
                 <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="cn">CN</button>
-                <button class="lang-btn" data-lang="jp">JP</button>
-                <button id="theme-toggle" class="lang-btn" aria-label="Toggle dark mode" style="margin-left: 10px;">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <button id="theme-toggle" class="lang-btn"><i class="fas fa-moon"></i></button>
             </div>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 

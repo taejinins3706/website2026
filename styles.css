@@ -382,6 +382,79 @@ header.scrolled .nav-links a {
     width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--bg-secondary);
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown li {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    text-shadow: none;
+    /* remove header shadow */
+    transition: all 0.2s;
+}
+
+.dropdown a::after {
+    display: none;
+    /* remove underline anim from main links */
+}
+
+.dropdown a:hover {
+    background: rgba(var(--primary-rgb), 0.05);
+    color: var(--primary-color);
+    padding-left: 25px;
+    /* slight slide effect */
+}
+
+/* Ensure header text color in dropdown is readable regardless of theme */
+header .dropdown a {
+    color: #333;
+}
+
+[data-theme="dark"] header .dropdown a {
+    color: #eee;
+}
+
+html {
+    scroll-padding-top: 100px;
+    /* Offset for sticky header */
+}
+
+
 .lang-switch {
     display: flex;
     gap: 10px;

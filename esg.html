@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav.esg">ESG 경영 - 주식회사 태진아이엔에스</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">홈</a></li>
+                    <li class="nav-item">
+                        <a href="company.html">회사소개</a>
+                        <ul class="dropdown">
+                            <li><a href="company.html#ceo">CEO 인사말</a></li>
+                            <li><a href="company.html#philosophy">경영이념</a></li>
+                            <li><a href="company.html#history">회사연혁</a></li>
+                            <li><a href="company.html#org">조직도</a></li>
+                            <li><a href="company.html#location">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html">제품소개</a>
+                        <ul class="dropdown">
+                            <li><a href="products.html#overview">제품개요</a></li>
+                            <li><a href="products.html#lineup">제품라인업</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="business.html">사업소개</a>
+                        <ul class="dropdown">
+                            <li><a href="business.html#machinery">기계사업부</a></li>
+                            <li><a href="business.html#plant">플랜트사업부</a></li>
+                            <li><a href="business.html#general">일반사업부</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="esg.html" class="active">ESG</a>
+                        <ul class="dropdown">
+                            <li><a href="esg.html#ethics" onclick="openTab('ethics')">윤리경영</a></li>
+                            <li><a href="esg.html#safety" onclick="openTab('safety')">안전보건경영</a></li>
+                            <li><a href="esg.html#quality" onclick="openTab('quality')">품질경영</a></li>
+                            <li><a href="esg.html#env" onclick="openTab('env')">환경경영</a></li>
+                            <li><a href="esg.html#cert" onclick="openTab('cert')">인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="career.html">채용</a>
+                        <ul class="dropdown">
+                            <li><a href="career.html#notice">채용공고</a></li>
+                            <li><a href="career.html#talent">인재상</a></li>
+                            <li><a href="career.html#benefit">복리후생</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="support.html">고객지원</a>
+                        <ul class="dropdown">
+                            <li><a href="support.html#notice">공지사항</a></li>
+                            <li><a href="support.html#data">자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ko">KR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button id="theme-toggle" class="lang-btn"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="detail-hero"
+        style="background-image: url('img/esg_bg.jpg'), linear-gradient(#2c3e50, #2c3e50); background-blend-mode: overlay;">
+        <div class="detail-hero-content">
+            <div>
+                <h1 class="detail-title">ESG 경영</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">지속가능한 미래를 위해 사회적 책임을 다합니다.</p>
+            </div>
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span>ESG</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sub Navigation -->
+    <div class="sub-nav-container">
+        <div class="sub-nav">
+            <button class="sub-nav-link active" onclick="openTab('ethics')">윤리경영</button>
+            <button class="sub-nav-link" onclick="openTab('safety')">안전보건경영</button>
+            <button class="sub-nav-link" onclick="openTab('quality')">품질경영</button>
+            <button class="sub-nav-link" onclick="openTab('env')">환경경영</button>
+            <button class="sub-nav-link" onclick="openTab('cert')">인증서</button>
+        </div>
+    </div>
+
+    <main class="detail-content container">
+
+        <section id="ethics" class="tab-content active">
+            <div class="content-block">
+                <div class="content-text">
+                    <h2 class="content-title">윤리경영</h2>
+                    <div class="content-desc">
+                        <p>투명하고 공정한 경영 활동을 통해 이해관계자로부터 신뢰받는 기업이 되겠습니다.</p>
+                        <ul style="margin-top: 20px; list-style: disc; padding-left: 20px;">
+                            <li>법규 준수 및 공정 경쟁</li>
+                            <li>부패 방지 및 청렴 문화 확산</li>
+                            <li>고객 정보 보호 및 비밀 준수</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="img/ethics_placeholder.jpg"
+                        onerror="this.src='https://via.placeholder.com/600x400?text=Ethics'" alt="Ethics">
+                </div>
+            </div>
+        </section>
+
+        <section id="safety" class="tab-content">
+            <div class="content-block reverse">
+                <div class="content-text">
+                    <h2 class="content-title">안전보건경영</h2>
+                    <div class="content-desc">
+                        <p>근로자의 안전과 건강을 최우선 가치로 여기며, 안전한 작업 환경을 조성합니다.</p>
+                        <ul style="margin-top: 20px; list-style: disc; padding-left: 20px;">
+                            <li>위험성 평가 및 개선 활동 정례화</li>
+                            <li>안전 보건 교육 강화</li>
+                            <li>무재해 사업장 달성 목표</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="img/safety_placeholder.jpg"
+                        onerror="this.src='https://via.placeholder.com/600x400?text=Safety'" alt="Safety">
+                </div>
+            </div>
+        </section>
+
+        <section id="quality" class="tab-content">
+            <div class="text-center">
+                <h2 class="content-title">품질경영</h2>
+                <p class="content-desc mb-5">ISO 9001 인증을 바탕으로 완벽한 품질 관리 시스템을 운영합니다.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>고객 요구사항 충족</h3>
+                    </div>
+                    <div class="card">
+                        <h3>지속적인 품질 개선</h3>
+                    </div>
+                    <div class="card">
+                        <h3>불량률 0% 도전</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="env" class="tab-content">
+            <div class="content-block">
+                <div class="content-text">
+                    <h2 class="content-title">환경경영</h2>
+                    <p class="content-desc">환경 오염을 최소화하고 친환경 자재 사용을 확대하여 지구 환경 보전에 기여합니다.</p>
+                </div>
+                <div class="content-image">
+                    <img src="img/env_placeholder.jpg"
+                        onerror="this.src='https://via.placeholder.com/600x400?text=Environment'" alt="Environment">
+                </div>
+            </div>
+        </section>
+
+        <section id="cert" class="tab-content">
+            <div class="text-center">
+                <h2 class="content-title">인증서</h2>
+                <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="gallery-item"><img src="img/cert_iso9001.jpg"
+                            onerror="this.src='https://via.placeholder.com/300x400?text=ISO+9001'" alt="ISO 9001"></div>
+                    <div class="gallery-item"><img src="img/cert_iso14001.jpg"
+                            onerror="this.src='https://via.placeholder.com/300x400?text=ISO+14001'" alt="ISO 14001">
+                    </div>
+                    <div class="gallery-item"><img src="img/cert_patent.jpg"
+                            onerror="this.src='https://via.placeholder.com/300x400?text=Patent'" alt="Patent"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 TAEJIN INS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.sub-nav-link').forEach(el => el.classList.remove('active')); // clear all
+
+            const target = document.getElementById(tabName);
+            if (target) target.classList.add('active');
+
+            // Highlight specific sub-nav
+            const btn = document.querySelector(`.sub-nav-link[onclick="openTab('${tabName}')"]`);
+            if (btn) btn.classList.add('active');
+        }
+
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) openTab(hash);
+        });
+    </script>
+</body>
+
+</html>

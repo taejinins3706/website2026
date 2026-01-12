@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav.career">인재채용 - 주식회사 태진아이엔에스</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Notice Table */
+        .notice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .notice-table th {
+            background: var(--bg-secondary);
+            padding: 15px;
+            text-align: left;
+            border-top: 2px solid var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notice-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notice-table tr:hover {
+            background: rgba(0, 0, 0, 0.02);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/iso2025_2.jpg" alt="ISO Certified">
+                <img src="img/taejinins_logo.jpg" alt="TAEJIN INS">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">홈</a></li>
+                    <li class="nav-item">
+                        <a href="company.html">회사소개</a>
+                        <ul class="dropdown">
+                            <li><a href="company.html#ceo">CEO 인사말</a></li>
+                            <li><a href="company.html#philosophy">경영이념</a></li>
+                            <li><a href="company.html#history">회사연혁</a></li>
+                            <li><a href="company.html#org">조직도</a></li>
+                            <li><a href="company.html#location">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html">제품소개</a>
+                        <ul class="dropdown">
+                            <li><a href="products.html#overview">제품개요</a></li>
+                            <li><a href="products.html#lineup">제품라인업</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="business.html">사업소개</a>
+                        <ul class="dropdown">
+                            <li><a href="business.html#machinery">기계사업부</a></li>
+                            <li><a href="business.html#plant">플랜트사업부</a></li>
+                            <li><a href="business.html#general">일반사업부</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="esg.html">ESG</a>
+                        <ul class="dropdown">
+                            <li><a href="esg.html#ethics">윤리경영</a></li>
+                            <li><a href="esg.html#safety">안전보건경영</a></li>
+                            <li><a href="esg.html#quality">품질경영</a></li>
+                            <li><a href="esg.html#env">환경경영</a></li>
+                            <li><a href="esg.html#cert">인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="career.html" class="active">채용</a>
+                        <ul class="dropdown">
+                            <li><a href="career.html#notice" onclick="openTab('notice')">채용공고</a></li>
+                            <li><a href="career.html#talent" onclick="openTab('talent')">인재상</a></li>
+                            <li><a href="career.html#benefit" onclick="openTab('benefit')">복리후생</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="support.html">고객지원</a>
+                        <ul class="dropdown">
+                            <li><a href="support.html#notice">공지사항</a></li>
+                            <li><a href="support.html#data">자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ko">KR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button id="theme-toggle" class="lang-btn"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="detail-hero"
+        style="background-image: url('img/career_bg.jpg'), linear-gradient(#34495e, #34495e); background-blend-mode: overlay;">
+        <div class="detail-hero-content">
+            <div>
+                <h1 class="detail-title">인재채용</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">미래를 함께 열어갈 열정적인 인재를 기다립니다.</p>
+            </div>
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span>Career</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sub Navigation -->
+    <div class="sub-nav-container">
+        <div class="sub-nav">
+            <button class="sub-nav-link active" onclick="openTab('notice')">채용공고</button>
+            <button class="sub-nav-link" onclick="openTab('talent')">인재상</button>
+            <button class="sub-nav-link" onclick="openTab('benefit')">복리후생</button>
+        </div>
+    </div>
+
+    <main class="detail-content container">
+
+        <section id="notice" class="tab-content active">
+            <div class="text-center mb-5">
+                <h2 class="section-title">채용공고</h2>
+            </div>
+            <table class="notice-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">번호</th>
+                        <th style="width: 50%;">제목</th>
+                        <th style="width: 15%;">모집부문</th>
+                        <th style="width: 15%;">기간</th>
+                        <th style="width: 10%;">진행상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td>2026년 상반기 신입/경력 사원 채용</td>
+                        <td class="text-center">전부문</td>
+                        <td class="text-center">2026.01.02 ~ 01.31</td>
+                        <td class="text-center" style="color:red; font-weight:bold;">진행중</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">-</td>
+                        <td class="text-center" colspan="4">현재 추가로 진행 중인 채용 공고가 없습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="talent" class="tab-content">
+            <div class="content-block">
+                <div class="content-text">
+                    <h2 class="content-title">인재상</h2>
+                    <ul class="content-desc" style="list-style: none; padding:0;">
+                        <li style="margin-bottom: 20px;">
+                            <h3 style="color:var(--primary-color);">Challenge (도전)</h3>
+                            <p>현실에 안주하지 않고 끊임없이 새로운 목표에 도전하는 인재</p>
+                        </li>
+                        <li style="margin-bottom: 20px;">
+                            <h3 style="color:var(--primary-color);">Creativity (창의)</h3>
+                            <p>유연한 사고로 새로운 가치를 창출하는 인재</p>
+                        </li>
+                        <li style="margin-bottom: 20px;">
+                            <h3 style="color:var(--primary-color);">Cooperation (협력)</h3>
+                            <p>동료를 존중하고 팀워크를 발휘하는 인재</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-image">
+                    <img src="img/talent_placeholder.jpg"
+                        onerror="this.src='https://via.placeholder.com/600x600?text=Talent'" alt="Talent">
+                </div>
+            </div>
+        </section>
+
+        <section id="benefit" class="tab-content">
+            <div class="text-center mb-5">
+                <h2 class="section-title">복리후생</h2>
+                <div class="card-grid">
+                    <div class="card"><i class="fas fa-gift fa-2x mb-3"></i>
+                        <h3>명절 선물 지급</h3>
+                    </div>
+                    <div class="card"><i class="fas fa-utensils fa-2x mb-3"></i>
+                        <h3>중식 제공</h3>
+                    </div>
+                    <div class="card"><i class="fas fa-graduation-cap fa-2x mb-3"></i>
+                        <h3>교육비 지원</h3>
+                    </div>
+                    <div class="card"><i class="fas fa-umbrella-beach fa-2x mb-3"></i>
+                        <h3>연차 휴가</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 TAEJIN INS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.sub-nav-link').forEach(el => el.classList.remove('active'));
+
+            const target = document.getElementById(tabName);
+            if (target) target.classList.add('active');
+
+            const btn = document.querySelector(`.sub-nav-link[onclick="openTab('${tabName}')"]`);
+            if (btn) btn.classList.add('active');
+        }
+
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) openTab(hash);
+        });
+    </script>
+</body>
+
+</html>

@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
         function setRandomHeroBackground() {
             const randomIndex = Math.floor(Math.random() * heroImages.length);
             const selectedImage = heroImages[randomIndex];
-            // Using a dark gradient overlay to ensure text readability
-            const newBackground = `linear-gradient(rgba(27, 36, 48, 0.7), rgba(13, 17, 23, 0.8)), url('img/main/${selectedImage}')`;
+            // Just the image, no gradient overlay
+            const newBackground = `url('img/main/${selectedImage}')`;
             heroSection.style.backgroundImage = newBackground;
         }
 

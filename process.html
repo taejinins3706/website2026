@@ -9,84 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+            font-family: 'Pretendard', 'Inter', sans-serif;
         }
 
-        .page-header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/export_work_process/탱크바디보온작업.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .page-header h1 {
-            font-size: 3rem;
-            color: white;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .process-step {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .process-step:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .process-img {
-            flex: 1;
-            height: 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .process-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .process-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .process-info {
-            flex: 1;
-        }
-
-        .step-number {
-            display: inline-block;
-            font-size: 1.5rem;
+        /* Page specific override */
+        .process-number {
+            font-size: 4rem;
             font-weight: 800;
             color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            line-height: 46px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-
-            .process-step,
-            .process-step:nth-child(even) {
-                flex-direction: column;
-            }
-
-            .process-img {
-                width: 100%;
-                height: 250px;
-            }
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 0;
         }
     </style>
 </head>
@@ -121,11 +56,30 @@
         </div>
     </header>
 
-    <div class="page-header">
-        <h1 class="fade-up" data-i18n="process.title">수출장비 작업공정</h1>
+    <!-- Detail Hero -->
+    <div class="detail-hero" style="background-image: url('img/export_work_process/탱크바디보온작업.jpg');">
+        <div class="detail-hero-content">
+            <div>
+                <h1 class="detail-title" data-i18n="process.title">수출장비 작업공정</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;" data-i18n="process.desc">체계적이고 정밀한 태진아이엔에스만의 공정 시스템을 소개합니다.
+                </p>
+            </div>
+
+            <div class="breadcrumb-nav">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <span>Process</span>
+            </div>
+        </div>
     </div>
 
-    <main class="container section-padding">
+    <!-- Sub Navigation (Optional, maybe for future process types) -->
+    <div class="sub-nav-container">
+        <div class="sub-nav">
+            <a href="#process-detail-container" class="sub-nav-link active">전체공정</a>
+        </div>
+    </div>
+
+    <main class="detail-content">
 
         <div id="process-detail-container">
             <!-- Populated by JS -->
@@ -150,7 +104,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="script.js"></script>
     <script>
-        // Specific renderer for process page with images
+        // Specific renderer for process page with premium big images
         async function renderProcessDetail() {
             const lang = localStorage.getItem('preferredLang') || 'ko';
             try {
@@ -160,12 +114,11 @@
                 const container = document.getElementById('process-detail-container');
                 if (!container || !data.process || !data.process.steps) return;
 
-                // Manual mapping of images to steps indices (0-11)
                 const images = [
                     "img/export_work_process/장비입고.jpg",
                     "img/export_work_process/작업환경맞춤비계설치.jpg",
                     "img/export_work_process/탱크바디보온작업.jpg",
-                    "img/export_work_process/탱그경판(상하부)보온작업.jpg", // Note typo in filename "탱그"
+                    "img/export_work_process/탱그경판(상하부)보온작업.jpg",
                     "img/export_work_process/탱크바디함석작업.jpg",
                     "img/export_work_process/탱크경판(상하부)함석작업.jpg",
                     "img/export_work_process/장애물패치작업.jpg",
@@ -176,17 +129,23 @@
                     "img/export_work_process/장비출고.jpg"
                 ];
 
-                container.innerHTML = data.process.steps.map((step, index) => `
-                    <div class="process-step fade-up">
-                        <div class="process-img">
+                container.innerHTML = data.process.steps.map((step, index) => {
+                    const isEven = index % 2 !== 0; // Alternate layout
+                    return `
+                    <div class="content-block ${isEven ? 'reverse' : ''} fade-up">
+                        <div class="content-text">
+                            <div class="process-number">0${index + 1}</div>
+                            <div class="content-label" data-i18n="nav.process">STEP 0${index + 1}</div>
+                            <h2 class="content-title">${step}</h2>
+                            <div class="content-desc">
+                                <p>엄격한 품질 관리 기준에 따라 진행되는 ${step} 단계입니다.</p>
+                            </div>
+                        </div>
+                        <div class="content-image">
                             <img src="${images[index]}" alt="${step}" loading="lazy">
                         </div>
-                        <div class="process-info">
-                            <span class="step-number">${index + 1}</span>
-                            <h3 style="font-size: 1.5rem; color: var(--text-primary);">${step}</h3>
-                        </div>
                     </div>
-                `).join('');
+                `}).join('');
 
                 // Trigger animations
                 const observer = new IntersectionObserver((entries) => {

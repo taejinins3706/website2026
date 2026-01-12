@@ -10,24 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Noto Sans KR', 'Inter', sans-serif;
-        }
-
-        .page-header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/product/pipe_cover.jpg');
-            /* Fallback or specific image */
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .page-header h1 {
-            font-size: 3rem;
-            color: white;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Pretendard', 'Inter', sans-serif;
         }
     </style>
 </head>
@@ -62,35 +45,66 @@
         </div>
     </header>
 
-    <div class="page-header">
-        <h1 class="fade-up" data-i18n="products.title">제품소개</h1>
+    <!-- Detail Hero Section -->
+    <div class="detail-hero" style="background-image: url('img/product/pipe_cover.jpg');">
+        <div class="detail-hero-content">
+            <div>
+                <h1 class="detail-title" data-i18n="products.title">제품소개</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;" data-i18n="products.desc">최고의 품질과 기술력으로 완성된 태진아이엔에스의 제품을
+                    만나보세요.</p>
+            </div>
+
+            <div class="breadcrumb-nav">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <span>Product</span>
+            </div>
+        </div>
     </div>
 
-    <main class="container section-padding">
+    <!-- Sub Navigation -->
+    <div class="sub-nav-container">
+        <div class="sub-nav">
+            <a href="#overview" class="sub-nav-link active">제품개요</a>
+            <a href="#product-grid" class="sub-nav-link">제품라인업</a>
+        </div>
+    </div>
 
-        <section class="mb-5 fade-up" style="margin-bottom: 50px;">
-            <div class="glass" style="padding: 30px;">
-                <h2 style="color: var(--primary-color); margin-bottom: 15px;" data-i18n="products.title">생산제품</h2>
-                <p style="margin-bottom: 30px; line-height: 1.8;" data-i18n="products.desc">개요 설명...</p>
+    <main class="detail-content">
 
-                <h3 style="margin-bottom: 15px;" data-i18n="products.effect_title">제품효과</h3>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <!-- Effects list should be populated dynamically ideally, but structure is slightly different. 
-                         I will assume the JS doesn't auto-populate this specific list unless I update it. 
-                         Let's keep it simple and just rely on the static structure + specific data keys if possible 
-                         or update JS to handle a generic list. 
-                         For now, I'll rely on the 'data-i18n' for single strings, but for arrays, I'll need a helper.
-                         I'll add a script tag helper here specifically for this page. -->
-                    <div id="product-effects-list"></div>
-                </ul>
+        <!-- Feature Block: Intro / Effects -->
+        <section id="overview" class="container">
+            <div class="content-block">
+                <div class="content-text fade-up">
+                    <div class="content-label" data-i18n="nav.product">PRODUCT INFO</div>
+                    <h2 class="content-title" data-i18n="products.effect_title">제품효과</h2>
+                    <div class="content-desc">
+                        <ul id="product-effects-list" style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+                                <i class="fas fa-check-circle"
+                                    style="color: var(--primary-color); margin-top: 5px;"></i>
+                                <span>Loading effects...</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-image fade-up">
+                    <img src="img/product/valve_cover.jpg" alt="Product Feature"
+                        onerror="this.src='https://via.placeholder.com/600x400?text=Product+Feature'">
+                </div>
             </div>
         </section>
 
-        <section>
+        <!-- Product Grid -->
+        <section class="container" style="margin-top: 100px;">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Product Lineup</h2>
+            </div>
+
             <div id="product-grid" class="card-grid">
                 <!-- Products will be rendered here by script.js -->
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -110,23 +124,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="script.js"></script>
     <script>
-        // Page specific script to render effects list
-        // We'll hook into the translation loading logic by listening to a custom event or just polling?
-        // Actually, script.js handles language switching. We can add a function to `script.js` to trigger a custom event 
-        // OR just handle this specific list in `script.js` too?
-        // To be clean, I'll add a helper in this page that reads the current lang data from the translation object if I can access it.
-        // But `loadTranslations` is internal to `script.js`.
-
-        // I'll make a small specific fetch here to support the effects list immediately on load, 
-        // relying on the main script for the rest.
-        // OR: I can update script.js to expose data? 
-        // Simpler: I'll add a 'renderProductEffects' function in script.js since I'm already editing it.
-        // I will do that in a follow-up or just use the existing JS structure.
-        // Actually I'll use a small inline script that re-fetches or use a global window object if available.
-        // For simplicity, let's just create the DOM elements with data-i18n-list="products.effects" and allow script.js to handle list?
-        // No, script.js doesn't have list handling for generic lists.
-
-        // I will add a tiny script here.
+        // Custom update for effects list to match premium style
         async function updateEffects() {
             const lang = localStorage.getItem('preferredLang') || 'ko';
             try {
@@ -134,12 +132,38 @@
                 const data = await res.json();
                 const list = document.getElementById('product-effects-list');
                 if (list && data.products && data.products.effects) {
-                    list.innerHTML = data.products.effects.map(e => `<li style="margin-bottom: 10px;">${e}</li>`).join('');
+                    list.innerHTML = data.products.effects.map(e => `
+                        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-top: 5px;"></i>
+                            <span style="font-size: 1.1rem; line-height: 1.6;">${e}</span>
+                        </li>
+                    `).join('');
                 }
             } catch (e) { }
         }
         document.addEventListener('DOMContentLoaded', updateEffects);
         document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setTimeout(updateEffects, 100)));
+
+        // Sub-nav active state handling
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.sub-nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 

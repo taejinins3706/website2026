@@ -243,4 +243,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+
+    // 5. Hero Background Slideshow
+    const heroSection = document.getElementById('hero-section');
+    if (heroSection) {
+        const heroImages = [
+            'Whisk_04936154d3c7abb86d04cbe8aab4b65bdr.jpeg',
+            'Whisk_1841e779acde63eb1784151bc3eb3301dr.jpeg',
+            'Whisk_7d8a9a4d79a2d5796d64287263e40274dr.jpeg',
+            'Whisk_80483ddd394a9cb9c9f4b58dd12184a3dr.jpeg',
+            'Whisk_90dce6473bf2851ab9a40f1737591c80eg.jpeg',
+            'Whisk_b2b13bf3f83f503a9b8441a3ab06d39bdr.jpeg',
+            'Whisk_b6b6289a226e98baa9a428a24986d9efdr.jpeg',
+            'Whisk_f11be3bdf5a83ad914b4f3f5d77b8303dr.jpeg',
+            'Whisk_f699209f6611a6897ca4d48726ebb786dr.jpeg'
+        ];
+
+        // Preload images
+        heroImages.forEach(img => {
+            const tempImg = new Image();
+            tempImg.src = `img/main/${img}`;
+        });
+
+        // Function to set random background
+        function setRandomHeroBackground() {
+            const randomIndex = Math.floor(Math.random() * heroImages.length);
+            const selectedImage = heroImages[randomIndex];
+            // Using a dark gradient overlay to ensure text readability
+            const newBackground = `linear-gradient(rgba(27, 36, 48, 0.7), rgba(13, 17, 23, 0.8)), url('img/main/${selectedImage}')`;
+            heroSection.style.backgroundImage = newBackground;
+        }
+
+        // Initial set
+        setRandomHeroBackground();
+
+        // Interval
+        setInterval(setRandomHeroBackground, 5000);
+    }
 });

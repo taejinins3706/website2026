@@ -379,13 +379,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Run Animation if overlay exists
     const animeOverlay = document.getElementById('anime-overlay');
+    const skipBtn = document.getElementById('anime-skip-btn');
+
+    // 1. Always init hero content immediately so it loads in background (Preload)
+    initHeroContent();
 
     if (animeOverlay && window.anime) {
+        // 2. Lock Scroll
+        document.body.classList.add('no-scroll');
+
         const rows = [
             document.getElementById('anime-row-0'),
             document.getElementById('anime-row-1'),
             document.getElementById('anime-row-2')
         ];
+
+        // Skip Functionality
+        const finishAnimation = () => {
+            if (window.animeOverlayTimeline) window.animeOverlayTimeline.pause();
+            anime.remove(animeOverlay);
+            anime.remove('.anime-letter');
+            anime.remove('#anime-logo-container');
+
+            animeOverlay.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        };
+
+        if (skipBtn) {
+            skipBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                finishAnimation();
+            });
+        }
 
         if (rows[0]) {
             rows.forEach(row => {
@@ -411,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tl = anime.timeline({
                 easing: 'easeInOutQuad',
                 complete: function () {
-                    // Fade out overlay then init content
+                    // Fade out overlay finally
                     anime({
                         targets: '#anime-overlay',
                         opacity: 0,
@@ -419,11 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         easing: 'linear',
                         complete: function () {
                             animeOverlay.style.display = 'none';
-                            initHeroContent();
+                            document.body.classList.remove('no-scroll');
                         }
                     });
                 }
             });
+            window.animeOverlayTimeline = tl;
 
             // 1. PHASE 1: Background Black to Blue
             tl.add({
@@ -491,11 +517,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            // 5. PHASE 5: Transition to White BG & Show Logo
+            tl.add({
+                targets: '#anime-overlay',
+                backgroundColor: '#ffffff',
+                duration: 1000,
+                easing: 'easeInOutQuad'
+            });
+
+            tl.add({
+                targets: '.anime-text-wrapper',
+                opacity: 0,
+                duration: 500,
+                easing: 'easeOutQuad'
+            }, '-=1000');
+
+            tl.add({
+                targets: '#anime-logo-container',
+                opacity: [0, 1],
+                translateX: ['-50%', '-50%'], // Force fixed position (no movement)
+                translateY: ['-50%', '-50%'], // Force fixed position (no movement)
+                duration: 2000,
+                easing: 'linear'
+            }, '-=500');
+
+            // Hold Logo
+            tl.add({
+                targets: '#anime-logo-container',
+                duration: 1500, // Display logo for 1.5s
+                opacity: 1
+            });
+
         } else {
-            initHeroContent();
+            // No text rows found?
+            // Already init content.
         }
     } else {
-        initHeroContent();
+        // No overlay or no anime
+        // Already init content.
     }
 
     // 6. Intro Section Background Slideshow

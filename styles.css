@@ -1384,6 +1384,7 @@ footer .container {
     /* Limit lines */
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1773,4 +1774,53 @@ footer .container {
         max-width: 320px;
         gap: 30px;
     }
+}
+
+/* Anime Overlay Additional Styles */
+.no-scroll {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
+#anime-logo-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 30;
+    width: clamp(300px, 40vw, 600px);
+    height: auto;
+}
+
+#anime-logo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Original is likely black/colored perfect for white bg */
+}
+
+#anime-skip-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 10000;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#anime-skip-btn:hover {
+    background: white;
+    color: black;
+    border-color: white;
 }

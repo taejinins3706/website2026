@@ -244,90 +244,258 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 5. Hero Background Slideshow with Pagination and Text
+    // 5. Hero Animation & Content Initialization
     const heroSection = document.getElementById('hero-section');
     const heroContent = document.getElementById('hero-content');
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
+    const heroCompany = document.getElementById('hero-company');
     const paginationContainer = document.getElementById('hero-pagination');
 
-    if (heroSection && heroContent && paginationContainer) {
-        const slideTexts = [
-            {
-                title: '기계설비·배관 보온공사 시공 전문기업',
-                subtitle: '최고의 기술력과 노하우로 기계·배관 보온 공사의 새로운 기준을 제시합니다.'
-            },
-            {
-                title: '반도체 / 플랜트 단열 시공 전문',
-                subtitle: '정밀한 시공과 철저한 품질 관리로 에너지 효율을 극대화합니다.'
-            },
-            {
-                title: '고객과 함께 성장하는 파트너',
-                subtitle: '신뢰와 정직을 바탕으로 안전하고 완벽한 시공을 약속드립니다.'
+    // Define the content initialization separately
+    function initHeroContent() {
+        if (heroSection && heroContent && paginationContainer) {
+            const slideTexts = [
+                {
+                    title: '플랜트·기계설비 배관·탱크 보온 시공 전문 파트너',
+                    subtitle: '최고의 기술력과 정밀한 품질 관리로 에너지 효율을 극대화하며, 신뢰와 안전을 바탕으로 고객과 함께 성장합니다.',
+                    company: 'TAEJIN INS Co., Ltd.'
+                }
+            ];
+
+            // Generate 9 slides using hero1-hero9
+            const slides = Array.from({ length: 9 }, (_, i) => ({
+                image: `hero${i + 1}.jpeg`,
+                ...slideTexts[0] // Use the unified text for all slides
+            }));
+
+            let currentSlide = 0;
+            const slideIntervalTime = 5000;
+            let slideInterval;
+
+            // Preload hero images
+            slides.forEach(slide => {
+                const tempImg = new Image();
+                tempImg.src = `img/main/${slide.image}`;
+            });
+
+            // Create Dots
+            paginationContainer.innerHTML = ''; // Clear just in case
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('hero-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    resetInterval();
+                });
+                paginationContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.hero-dot');
+
+            function updateSlide(index) {
+                heroContent.classList.add('fade-out');
+                setTimeout(() => {
+                    heroSection.style.backgroundImage = `url('img/main/${slides[index].image}')`;
+                    heroTitle.textContent = slides[index].title;
+                    heroSubtitle.textContent = slides[index].subtitle;
+                    if (heroCompany) heroCompany.textContent = slides[index].company;
+
+                    dots.forEach(d => d.classList.remove('active'));
+                    dots[index].classList.add('active');
+
+                    heroContent.classList.remove('fade-out');
+                }, 500);
             }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateSlide(currentSlide);
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide(currentSlide);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, slideIntervalTime);
+            }
+
+            function startImageSlideshow() {
+                heroSection.style.backgroundImage = `url('img/main/${slides[0].image}')`;
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[0]) dots[0].classList.add('active');
+                slideInterval = setInterval(nextSlide, slideIntervalTime);
+            }
+
+            // Check for Video Container
+            const videoContainer = document.getElementById('hero-video-container');
+            const videos = ['video/Veo3AI%EB%8F%99%EC%98%81%EC%83%81.mp4', 'video/%EA%B7%B8%EB%A1%9DAI%EB%8F%99%EC%98%81%EC%83%81.mp4'];
+
+            if (videoContainer) {
+                videoContainer.innerHTML = ''; // Clear if anything
+                let videoIndex = 0;
+                const videoElement = document.createElement('video');
+                videoElement.muted = true; // Required for autoplay
+                videoElement.autoplay = true;
+                videoElement.playsInline = true;
+                videoElement.style.width = '100%';
+                videoElement.style.height = '100%';
+                videoElement.style.objectFit = 'cover';
+
+                videoContainer.appendChild(videoElement);
+
+                const playNextVideo = () => {
+                    if (videoIndex < videos.length) {
+                        videoElement.src = videos[videoIndex];
+                        const playPromise = videoElement.play();
+
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.error("Video play failed:", error);
+                                videoIndex++;
+                                playNextVideo();
+                            });
+                        }
+
+                        videoIndex++;
+                        videoElement.onended = playNextVideo;
+                    } else {
+                        // All videos done
+                        videoContainer.style.display = 'none';
+                        startImageSlideshow();
+                    }
+                };
+
+                playNextVideo();
+            } else {
+                startImageSlideshow();
+            }
+        }
+    }
+
+    // Run Animation if overlay exists
+    const animeOverlay = document.getElementById('anime-overlay');
+
+    if (animeOverlay && window.anime) {
+        const rows = [
+            document.getElementById('anime-row-0'),
+            document.getElementById('anime-row-1'),
+            document.getElementById('anime-row-2')
         ];
 
-        // Generate 9 slides using hero1-hero9
-        const slides = Array.from({ length: 9 }, (_, i) => ({
-            image: `hero${i + 1}.jpeg`,
-            ...slideTexts[i % 3]
-        }));
-
-        let currentSlide = 0;
-        const slideIntervalTime = 5000;
-        let slideInterval;
-
-        // Preload hero images
-        slides.forEach(slide => {
-            const tempImg = new Image();
-            tempImg.src = `img/main/${slide.image}`;
-        });
-
-        // Create Dots
-        slides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('hero-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                resetInterval();
+        if (rows[0]) {
+            rows.forEach(row => {
+                const text = row.textContent;
+                row.innerHTML = '';
+                [...text].forEach(char => {
+                    const span = document.createElement('span');
+                    span.classList.add('anime-letter');
+                    span.textContent = char;
+                    if (char === ' ') {
+                        span.style.width = '0.3em';
+                    }
+                    row.appendChild(span);
+                });
             });
-            paginationContainer.appendChild(dot);
-        });
 
-        const dots = document.querySelectorAll('.hero-dot');
+            const allLetters = document.querySelectorAll('.anime-letter');
+            const staggerDelay = 60;
+            const strokeDuration = 800;
+            const fillDuration = 1200;
+            const totalThickeningTime = (allLetters.length * staggerDelay) + strokeDuration;
 
-        function updateSlide(index) {
-            heroContent.classList.add('fade-out');
-            setTimeout(() => {
-                heroSection.style.backgroundImage = `url('img/main/${slides[index].image}')`;
-                heroTitle.textContent = slides[index].title;
-                heroSubtitle.textContent = slides[index].subtitle;
+            const tl = anime.timeline({
+                easing: 'easeInOutQuad',
+                complete: function () {
+                    // Fade out overlay then init content
+                    anime({
+                        targets: '#anime-overlay',
+                        opacity: 0,
+                        duration: 800,
+                        easing: 'linear',
+                        complete: function () {
+                            animeOverlay.style.display = 'none';
+                            initHeroContent();
+                        }
+                    });
+                }
+            });
 
-                dots.forEach(d => d.classList.remove('active'));
-                dots[index].classList.add('active');
+            // 1. PHASE 1: Background Black to Blue
+            tl.add({
+                targets: '#anime-overlay',
+                backgroundColor: ['#000000', '#1a365d'],
+                duration: totalThickeningTime,
+                easing: 'linear'
+            }, 0);
 
-                heroContent.classList.remove('fade-out');
-            }, 500);
+            // Letter-by-letter thick border transition
+            tl.add({
+                targets: '.anime-letter',
+                webkitTextStrokeWidth: ['0.5px', '8px'],
+                duration: strokeDuration,
+                delay: anime.stagger(staggerDelay),
+                easing: 'easeOutQuart'
+            }, 0);
+
+            // 2. PHASE 2: First Shine
+            tl.add({
+                targets: '#anime-shine-layer',
+                opacity: [0, 1, 0],
+                duration: 1200,
+                easing: 'linear',
+                begin: () => {
+                    anime({
+                        targets: '#anime-shine-mover',
+                        translateX: ['-100%', '100%'],
+                        duration: 1200,
+                        easing: 'easeInOutSine'
+                    });
+                }
+            });
+
+            // 3. PHASE 3: Background Blue to Red
+            tl.add({
+                targets: '#anime-overlay',
+                backgroundColor: ['#1a365d', '#c53030'],
+                duration: fillDuration,
+                easing: 'linear'
+            });
+
+            // Transition to White Fill
+            tl.add({
+                targets: '.anime-letter',
+                color: 'rgba(255, 255, 255, 1)',
+                webkitTextStrokeWidth: '1.5px',
+                duration: fillDuration,
+                easing: 'easeOutQuad'
+            }, '-=' + fillDuration);
+
+            // 4. PHASE 4: Second Shine
+            tl.add({
+                targets: '#anime-shine-layer',
+                opacity: [0, 1, 0],
+                duration: 1200,
+                easing: 'linear',
+                begin: () => {
+                    anime({
+                        targets: '#anime-shine-mover',
+                        translateX: ['-100%', '100%'],
+                        duration: 1200,
+                        easing: 'easeInOutSine'
+                    });
+                }
+            });
+
+        } else {
+            initHeroContent();
         }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlide(currentSlide);
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlide(currentSlide);
-        }
-
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, slideIntervalTime);
-        }
-
-        heroSection.style.backgroundImage = `url('img/main/${slides[0].image}')`;
-        slideInterval = setInterval(nextSlide, slideIntervalTime);
+    } else {
+        initHeroContent();
     }
 
     // 6. Intro Section Background Slideshow
@@ -352,5 +520,214 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIntroSlide = (currentIntroSlide + 1) % introImages.length;
             introSection.style.backgroundImage = `url('img/main/${introImages[currentIntroSlide]}')`;
         }, 5000);
+    }
+
+    // 6-B. Product Section (Background & Slider)
+    const productSection = document.getElementById('product');
+    const productSliderTrack = document.getElementById('product-slider-track');
+
+    if (productSection) {
+        // --- Background Slideshow ---
+        // Using images from img/main/product#.webp as requested
+        const productBgImages = [
+            'product1.webp',
+            'product2.webp',
+            'product3.webp'
+        ];
+        let currentProductBg = 0;
+
+        // Preload
+        productBgImages.forEach(img => {
+            const tempImg = new Image();
+            tempImg.src = `img/main/${img}`;
+        });
+
+        // Initial bg
+        productSection.style.backgroundImage = `url('img/main/${productBgImages[0]}')`;
+
+        // Interval
+        setInterval(() => {
+            currentProductBg = (currentProductBg + 1) % productBgImages.length;
+            productSection.style.backgroundImage = `url('img/main/${productBgImages[currentProductBg]}')`;
+        }, 5000);
+
+        // --- Product Card Slider ---
+        if (productSliderTrack) {
+            const products = [
+                {
+                    file: 'flange_cover.webp',
+                    titleEn: 'Flange Cover', titleKo: '플랜지 커버',
+                    descEn: 'Prevent energy loss effectively.', descKo: '열 손실을 효과적으로 방지합니다.',
+                    tagsEn: ['Energy Saving', 'Protection'], tagsKo: ['에너지 절감', '보호']
+                },
+                {
+                    file: 'valve_cover.webp',
+                    titleEn: 'Valve Cover', titleKo: '밸브 커버',
+                    descEn: 'Easy maintenance and insulation.', descKo: '유지보수가 쉽고 단열이 우수합니다.',
+                    tagsEn: ['Maintenance', 'Safety'], tagsKo: ['유지보수', '안전']
+                },
+                {
+                    file: 'pipe_cover.webp',
+                    titleEn: 'Pipe Cover', titleKo: '파이프 커버',
+                    descEn: 'Superior thermal insulation.', descKo: '뛰어난 단열 성능을 자랑합니다.',
+                    tagsEn: ['Thermal', 'Durable'], tagsKo: ['단열', '내구력']
+                },
+                {
+                    file: 'pump_cover.webp',
+                    titleEn: 'Pump Cover', titleKo: '펌프 커버',
+                    descEn: 'Noise reduction and protection.', descKo: '소음 감소 및 장비 보호에 탁월합니다.',
+                    tagsEn: ['Noise Control', 'Protection'], tagsKo: ['소음 제어', '보호']
+                },
+                {
+                    file: 'tankhead_cover.webp',
+                    titleEn: 'Tank Head Cover', titleKo: '탱크헤드 커버',
+                    descEn: 'Custom fit for large tanks.', descKo: '대형 탱크에 꼭 맞는 맞춤형 커버입니다.',
+                    tagsEn: ['Industrial', 'Custom'], tagsKo: ['산업용', '주문제작']
+                },
+                {
+                    file: 'long_elbow_cover1.webp',
+                    titleEn: 'Elbow Cover', titleKo: '엘보 커버',
+                    descEn: 'Perfect fit for corner pipes.', descKo: '코너 배관에 완벽하게 밀착됩니다.',
+                    tagsEn: ['Fitting', 'Efficiency'], tagsKo: ['피팅', '효율성']
+                },
+                {
+                    file: 't_cover1.webp',
+                    titleEn: 'T-Cover', titleKo: 'T 커버',
+                    descEn: 'T-junction insulation handling.', descKo: 'T자형 배관 단열도 문제없습니다.',
+                    tagsEn: ['Complex Shape', 'Insulation'], tagsKo: ['특수 형상', '단열']
+                }
+            ];
+
+            const renderProductSlider = (lang) => {
+                const isEn = lang === 'en';
+                productSliderTrack.innerHTML = products.map(p => {
+                    const title = isEn ? p.titleEn : p.titleKo;
+                    const desc = isEn ? p.descEn : p.descKo;
+                    const tags = isEn ? p.tagsEn : p.tagsKo;
+                    const btnText = isEn ? 'Load More' : '자세히 보기';
+
+                    return `
+                    <div class="product-card">
+                        <div class="product-card-img">
+                            <img src="img/product/${p.file}" alt="${title}" onerror="this.src='img/taejinins_logo2.png'">
+                        </div>
+                        <div class="product-card-body">
+                            <div>
+                                <h4 class="product-card-title">${title}</h4>
+                                <p class="product-card-desc">${desc}</p>
+                            </div>
+                            <div>
+                                <div class="product-tags">
+                                    ${tags.map(t => `<span class="product-tag">${t}</span>`).join('')}
+                                </div>
+                                <a href="products.html#detail" class="product-btn" onclick="event.stopPropagation();">${btnText}</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                }).join('');
+            };
+
+            // Initial Render
+            renderProductSlider(localStorage.getItem('preferredLang') || 'ko');
+
+            // Re-render on click of lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const newLang = e.currentTarget.getAttribute('data-lang');
+                    if (newLang) renderProductSlider(newLang);
+                });
+            });
+
+            // Slider Nav Events
+            const prevBtn = document.querySelector('.product-slider-wrapper .prev');
+            const nextBtn = document.querySelector('.product-slider-wrapper .next');
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    productSliderTrack.scrollBy({ left: -280, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    productSliderTrack.scrollBy({ left: 280, behavior: 'smooth' });
+                });
+            }
+        }
+    }
+
+    // 6-C. Project Section Background Slideshow (DISABLED for Redesign)
+    /*
+    const projectSection = document.getElementById('project');
+    if (projectSection) {
+        // Encoding Korean filenames if necessary, but modern browsers handle it. 
+        // Using encodeURI is safer for CSS url().
+        const projectImages = [
+            'plant/플랜트사업부_제작사례3.png',
+            'plant/플랜트사업부_제작사례6.png',
+            'plant/플랜트사업부_제작사례7.png'
+        ];
+        let currentProjectSlide = 0;
+
+        // Preload
+        projectImages.forEach(img => {
+            const tempImg = new Image();
+            tempImg.src = `img/${img}`;
+        });
+
+        projectSection.style.webkitTransition = 'background-image 1s ease-in-out';
+        projectSection.style.transition = 'background-image 1s ease-in-out';
+        projectSection.style.backgroundImage = `url('img/${projectImages[0]}')`;
+        projectSection.style.backgroundSize = 'cover';
+        projectSection.style.backgroundPosition = 'center';
+
+        setInterval(() => {
+            currentProjectSlide = (currentProjectSlide + 1) % projectImages.length;
+            projectSection.style.backgroundImage = `url('img/${projectImages[currentProjectSlide]}')`;
+        }, 5000);
+    }
+    */
+
+    // NEW: Project Card Grid Observer
+    const projectGrid = document.querySelector('.project-card-grid');
+    if (projectGrid) {
+        const gridObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    gridObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        gridObserver.observe(projectGrid);
+    }
+
+    // 7. Vertical Navigation Scroll Spy
+    const verticalDots = document.querySelectorAll('.vertical-dot');
+    const sections = document.querySelectorAll('section[id]');
+
+    if (verticalDots.length > 0 && sections.length > 0) {
+        const observerOptions = {
+            root: null,
+            threshold: 0.3 // Trigger when 30% visible
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    verticalDots.forEach(dot => {
+                        // Match exactly OR match partial if needed, but exact is best
+                        if (dot.getAttribute('href') === `#${id}`) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
     }
 });

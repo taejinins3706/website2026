@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermal Insulation Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        :root {
+            --cold-blue: #1a365d;
+            --warm-red: #c53030;
+            --start-black: #000000;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Arial Black', sans-serif;
+            background-color: var(--start-black);
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+        }
+
+        .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            user-select: none;
+        }
+
+        .row {
+            display: block;
+            position: relative;
+            line-height: 0.85;
+            white-space: nowrap;
+        }
+
+        .letter {
+            display: inline-block;
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 0.5px rgba(255, 255, 255, 1);
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+
+        .shine-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+            mix-blend-mode: overlay;
+            opacity: 0;
+        }
+
+        .shine-gradient {
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0) 40%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 0) 60%,
+                    transparent 100%);
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-section" id="hero">
+        <div class="text-wrapper">
+            <div class="row" id="row-0">PIPE & TANK</div>
+            <div class="row" id="row-1">THERMAL</div>
+            <div class="row" id="row-2">INSULATION</div>
+        </div>
+
+        <div class="shine-overlay" id="shine-layer">
+            <div class="shine-gradient" id="shine-mover"></div>
+        </div>
+    </section>
+
+    <script>
+        const rows = [
+            document.getElementById('row-0'),
+            document.getElementById('row-1'),
+            document.getElementById('row-2')
+        ];
+
+        rows.forEach(row => {
+            const text = row.textContent;
+            row.innerHTML = '';
+            [...text].forEach(char => {
+                const span = document.createElement('span');
+                span.classList.add('letter');
+                span.textContent = char;
+                if (char === ' ') {
+                    span.style.width = '0.3em';
+                }
+                row.appendChild(span);
+            });
+        });
+
+        window.onload = function () {
+            const allLetters = document.querySelectorAll('.letter');
+            const staggerDelay = 60;
+            const strokeDuration = 800;
+            const fillDuration = 1200;
+
+            // Calculate total time for the staggered thickening phase
+            const totalThickeningTime = (allLetters.length * staggerDelay) + strokeDuration;
+
+            const tl = anime.timeline({
+                easing: 'easeInOutQuad'
+            });
+
+            // 1. PHASE 1: Background Black to Blue (Synchronized with Thickening)
+            tl.add({
+                targets: '#hero',
+                backgroundColor: ['#000000', '#1a365d'],
+                duration: totalThickeningTime,
+                easing: 'linear'
+            }, 0);
+
+            // Letter-by-letter thick border transition
+            tl.add({
+                targets: '.letter',
+                webkitTextStrokeWidth: ['0.5px', '8px'],
+                duration: strokeDuration,
+                delay: anime.stagger(staggerDelay),
+                easing: 'easeOutQuart'
+            }, 0);
+
+            // 2. PHASE 2: First Shine (Post-thickening)
+            tl.add({
+                targets: '#shine-layer',
+                opacity: [0, 1, 0],
+                duration: 1200,
+                easing: 'linear',
+                begin: () => {
+                    anime({
+                        targets: '#shine-mover',
+                        translateX: ['-100%', '100%'],
+                        duration: 1200,
+                        easing: 'easeInOutSine'
+                    });
+                }
+            });
+
+            // 3. PHASE 3: Background Blue to Red (Synchronized with White Fill)
+            tl.add({
+                targets: '#hero',
+                backgroundColor: ['#1a365d', '#c53030'],
+                duration: fillDuration,
+                easing: 'linear'
+            });
+
+            // Transition to White Fill (synchronized with the background change to red)
+            tl.add({
+                targets: '.letter',
+                color: 'rgba(255, 255, 255, 1)',
+                webkitTextStrokeWidth: '1.5px',
+                duration: fillDuration,
+                easing: 'easeOutQuad'
+            }, '-=' + fillDuration); // Start at the same time as the background shift
+
+            // 4. PHASE 4: Second Shine (Final)
+            tl.add({
+                targets: '#shine-layer',
+                opacity: [0, 1, 0],
+                duration: 1200,
+                easing: 'linear',
+                begin: () => {
+                    anime({
+                        targets: '#shine-mover',
+                        translateX: ['-100%', '100%'],
+                        duration: 1200,
+                        easing: 'easeInOutSine'
+                    });
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

@@ -9,8 +9,8 @@
     },
     "hero": {
         "company_name": "TAEJIN INS Co., Ltd.",
-        "title": "Specialists in Mechanical Equipment Insulation Construction",
-        "subtitle": "Setting new standards in insulation construction with superior technology and know-how.",
+        "title": "Specialized Partner for Plant & Machinery Piping and Tank Insulation",
+        "subtitle": "Maximizing energy efficiency through top technology and precise quality control, growing with customers based on trust and safety.",
         "cta": "Learn More"
     },
     "greetings": {
@@ -22,6 +22,7 @@
         "title": "Company Overview",
         "corp_name": "TAEJIN INS Co., Ltd.",
         "corp_name_label": "Corporation Name",
+        "ceo_name_label": "Representative",
         "ceo_name": "Yang Sung-hoon",
         "address": "423 Tojeong-ro, Yeongin-myeon, Asan-si, Chungcheongnam-do, Korea",
         "business": "Metal processing, Mechanical equipment insulation, Insulation material wholesale/retail",

@@ -70,49 +70,49 @@
                 "name": "Pipe Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material preventing insulation damage and rain inflow when insulating straight pipes or tank bodies.",
-                "img": "img/product/pipe_cover.jpg"
+                "img": "img/product/pipe_cover.webp"
             },
             {
                 "name": "Short Elbow Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for pipe direction change sections (ELBOW).",
-                "img": "img/product/short_elbow_cover1.jpg"
+                "img": "img/product/short_elbow_cover1.webp"
             },
             {
                 "name": "Long Elbow Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for pipe direction change sections (ELBOW).",
-                "img": "img/product/long_elbow_cover1.jpg"
+                "img": "img/product/long_elbow_cover1.webp"
             },
             {
                 "name": "T Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for pipe branch sections (TEE).",
-                "img": "img/product/t_cover1.jpg"
+                "img": "img/product/t_cover1.webp"
             },
             {
                 "name": "Flange Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for FLANGE sections connecting pipes or valves.",
-                "img": "img/product/flange_cover.jpg"
+                "img": "img/product/flange_cover.webp"
             },
             {
                 "name": "Valve Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for VALVE sections controlling fluid flow.",
-                "img": "img/product/valve_cover.jpg"
+                "img": "img/product/valve_cover.webp"
             },
             {
                 "name": "Pump Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for PUMP sections sucking/discharging fluids.",
-                "img": "img/product/pump_cover.jpg"
+                "img": "img/product/pump_cover.webp"
             },
             {
                 "name": "Tank Head Cover",
                 "material": "SUS, ALUMINIUM, COLOR STEEL, etc.",
                 "usage": "Exterior material for TANK HEAD sections.",
-                "img": "img/product/tankhead_cover.jpg"
+                "img": "img/product/tankhead_cover.webp"
             }
         ]
     },

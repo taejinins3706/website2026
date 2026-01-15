@@ -70,49 +70,49 @@
                 "name": "파이프커버(Pipe Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "직 배관이나 탱크 바디 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/pipe_cover.jpg"
+                "img": "img/product/pipe_cover.webp"
             },
             {
                 "name": "숏엘보커버(Short Elbow Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "배관의 방향 전환구간 (ELBOW) 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/short_elbow_cover1.jpg"
+                "img": "img/product/short_elbow_cover1.webp"
             },
             {
                 "name": "롱엘보커버(Long Elbow Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "배관의 방향 전환구간 (ELBOW) 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/long_elbow_cover1.jpg"
+                "img": "img/product/long_elbow_cover1.webp"
             },
             {
                 "name": "티커버(T Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "배관의 분기구간 (TEE) 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/t_cover1.jpg"
+                "img": "img/product/t_cover1.webp"
             },
             {
                 "name": "플랜지커버(Flange Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "배관이나 밸브 등을 연결하는 FLANGE 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/flange_cover.jpg"
+                "img": "img/product/flange_cover.webp"
             },
             {
                 "name": "밸브커버(Valve Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "유체의 흐름을 조절하는 VALVE 구간 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/valve_cover.jpg"
+                "img": "img/product/valve_cover.webp"
             },
             {
                 "name": "펌프커버(Pump Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "유체를 흡입, 토출하는 PUMP 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/pump_cover.jpg"
+                "img": "img/product/pump_cover.webp"
             },
             {
                 "name": "탱크헤드커버(Tank Head Cover)",
                 "material": "SUS, ALUMINIUM, COLOR STEEL 등",
                 "usage": "TANK HEAD부분 보온시 보온재 파손과 우수 등 외부 유입을 방지해주는 외장재",
-                "img": "img/product/tankhead_cover.jpg"
+                "img": "img/product/tankhead_cover.webp"
             }
         ]
     },

@@ -368,12 +368,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 5.5 Hero Playback Control
+    let heroStarted = false;
+    function startHeroFlow() {
+        if (heroStarted) return;
+        heroStarted = true;
+
+        // Initialize Index.html content (JS driven)
+        initHeroContent();
+
+        // Initialize Index2/3.html content (Iframe driven)
+        const iframes = document.querySelectorAll('iframe[data-src]');
+        iframes.forEach(iframe => {
+            if (iframe.dataset.src) {
+                iframe.src = iframe.dataset.src;
+            }
+        });
+    }
+
     // Run Animation if overlay exists
     const animeOverlay = document.getElementById('anime-overlay');
     const skipBtn = document.getElementById('anime-skip-btn');
 
-    // 1. Always init hero content immediately so it loads in background (Preload)
-    initHeroContent();
+    // Remove immediate initHeroContent call
+    // initHeroContent();
 
     if (animeOverlay && window.anime) {
         // 2. Lock Scroll
@@ -394,6 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             animeOverlay.style.display = 'none';
             document.body.classList.remove('no-scroll');
+            startHeroFlow(); // Start hero content on skip
         };
 
         if (skipBtn) {
@@ -427,6 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tl = anime.timeline({
                 easing: 'easeInOutQuad',
                 complete: function () {
+                    startHeroFlow(); // Start hero content when animation sequence completes
                     // Fade out overlay finally
                     anime({
                         targets: '#anime-overlay',
@@ -543,10 +563,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // No text rows found?
             // Already init content.
+            startHeroFlow();
         }
     } else {
         // No overlay or no anime
         // Already init content.
+        startHeroFlow();
     }
 
     // 6. Intro Section Background Slideshow

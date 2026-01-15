@@ -199,17 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'var(--bg-secondary)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderBottom = '1px solid var(--border-color)';
-            }
+            navLinks.classList.toggle('active');
+            // Toggle icon if desired, though simple is fine
         });
     }
 
@@ -460,9 +451,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 0);
 
             // Letter-by-letter thick border transition
+            const strokeTarget = window.innerWidth <= 768 ? '3px' : '8px';
             tl.add({
                 targets: '.anime-letter',
-                webkitTextStrokeWidth: ['0.5px', '8px'],
+                webkitTextStrokeWidth: ['0.5px', strokeTarget],
                 duration: strokeDuration,
                 delay: anime.stagger(staggerDelay),
                 easing: 'easeOutQuart'

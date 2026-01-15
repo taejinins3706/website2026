@@ -1824,3 +1824,268 @@ footer .container {
     color: black;
     border-color: white;
 }
+
+/* =========================================
+   Mobile Optimization Overrides (Consolidated)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Global Container Fixes */
+    html {
+        height: 100vh;
+        width: 100%;
+        overflow-y: scroll;
+        /* Force explicit scroll container */
+        overflow-x: hidden;
+        scroll-snap-type: y mandatory;
+        /* Explicit snap */
+        scroll-behavior: smooth;
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        min-height: 100vh;
+        scroll-snap-align: start;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3rem);
+        /* Responsive font size */
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .hero-content {
+        padding-top: 60px;
+        /* Offset for fixed header */
+        width: 100%;
+    }
+
+    /* Intro Section Mobile */
+    #intro {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        scroll-snap-align: start;
+    }
+
+    #intro .intro-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #intro .intro-link {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Product Section Mobile */
+    #product {
+        height: auto;
+        min-height: 100vh;
+        /* Ensure it's a valid snap target */
+        padding-top: 100px !important;
+        padding-bottom: 80px !important;
+        display: block;
+        /* Stack content */
+        scroll-snap-align: start;
+        /* Force snap */
+    }
+
+    .product-slider-wrapper {
+        margin-top: 30px;
+        width: 100vw;
+        margin-left: -20px;
+        /* Counteract container padding */
+        padding: 0 20px;
+    }
+
+    .product-slider {
+        padding-bottom: 20px;
+        /* Space for scrollbar if any */
+    }
+
+    .product-card {
+        min-width: 240px;
+        /* Slightly smaller cards */
+    }
+
+    /* Business Section Mobile */
+    .card-grid {
+        grid-template-columns: 1fr;
+        /* Single column */
+        gap: 20px;
+    }
+
+    /* Project Section Mobile */
+    #project {
+        height: auto;
+        min-height: 100vh;
+        /* Maintain full screen snap feel */
+        padding: 80px 0 !important;
+        scroll-snap-align: start;
+    }
+
+    .project-wrapper {
+        flex-direction: column;
+    }
+
+    .project-text-side {
+        padding: 0 20px 40px;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .project-text-side .section-title.text-left,
+    .project-text-side .section-subtitle.text-left {
+        text-align: center;
+    }
+
+    .project-text-side .section-subtitle.text-left::after {
+        margin: 15px auto 0;
+    }
+
+    .project-card-side {
+        height: auto;
+        padding: 0 20px;
+        perspective: none;
+        /* Disable 3D on mobile for performance/layout */
+    }
+
+    .project-card-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-card-item {
+        transform: none !important;
+        /* Disable fly-in on mobile to prevent overflow */
+        opacity: 1 !important;
+        animation: none !important;
+    }
+
+    /* Contact Section Mobile */
+    #contact.contact-full {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 0 !important;
+        scroll-snap-align: start;
+    }
+
+    .contact-info-side {
+        width: 100%;
+        padding: 80px 20px 40px;
+        min-width: 0;
+    }
+
+    .contact-map-side {
+        height: 400px;
+        width: 100%;
+    }
+
+    /* Footer Mobile */
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 0;
+    }
+
+    .footer-pagination-left {
+        grid-template-columns: 1fr;
+        /* Single column stack */
+        gap: 30px;
+    }
+
+    .footer-company-right {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    /* Navigation Mobile adjustment */
+    .mobile-menu-btn {
+        display: block;
+        font-size: 1.5rem;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        /* Mobile menu drawer style */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+        /* Override display:none */
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        color: #ffffff !important;
+        display: block;
+        padding: 5px 0;
+    }
+
+    /* Hide dropdowns in mobile initially or style them */
+    .dropdown {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        /* Toggle with JS if needed, or just show flat */
+        text-align: center;
+        transform: none;
+        padding: 10px 0;
+    }
+
+    .nav-item.active .dropdown {
+        display: block;
+    }
+}
